@@ -16,3 +16,7 @@ autophony: ## Generate a .PHONY rule for your Makefile using all rules in the Ma
 # - Simple Workflow
 dev: ## Run the `next dev` environnement.
 	@npm run dev
+
+# - Utilities
+install: ## Install all needed stuff for the project to run (doesn't include dependencies).
+	@npm install
