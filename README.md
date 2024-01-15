@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 📌 Wheics
 
-## Getting Started
+![React Badge](https://img.shields.io/badge/React-v18.2-%2361DAFB?logo=react&logoColor=%2361DAFB)
+![Next.js Badge](https://img.shields.io/badge/Next.js-v14-%23000000?logo=next.js&logoColor=000000)
+![Node.js Badge](https://img.shields.io/badge/Node.js-v21.6-%23339933?logo=node.js)
 
-First, run the development server:
 
+## 📋 Install
+Simply run:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+$ make install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ▶️ Run
+Simply run:
+```bash
+$ make dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ⚙️ Make rules
+- ***help***:           Show this help.
+- ***help-md***:        Show this help but in a markdown styled way. This can be used when updating the Makefile to generate documentation and simplify README.md's 'Make rules' section update.
+- ***autophony***:      Generate a .PHONY rule for your Makefile using all rules in the Makefile(s).
+- ***dev***:            Run the `next dev` environnement.
+- ***install***:        Install all needed stuff for the project to run (doesn't include dependencies).
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 📦 Dependencies
+- [make](https://www.gnu.org/software/make/)
+- [node.js](https://nodejs.org/en) 
 
-## Learn More
+##
+<a href="https://gitmoji.dev">
+  <img
+    src="https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg?style=flat-square"
+    alt="Gitmoji"
+  />
+</a>
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
