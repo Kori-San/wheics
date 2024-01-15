@@ -12,3 +12,7 @@ help-md: ## Show this help but in a markdown styled way. This can be used when u
 
 autophony: ## Generate a .PHONY rule for your Makefile using all rules in the Makefile(s).
 	@grep -oE "^[a-zA-Z-]*\:" $(MAKEFILE_LIST) | sed "s/://g" | xargs echo ".PHONY:"
+
+# - Simple Workflow
+dev: ## Run the `next dev` environnement.
+	@npm run dev
