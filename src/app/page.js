@@ -7,7 +7,8 @@ export function capitalize(string) {
 }
 
 export default function Home() {
-  const companyAPI = "https://recherche-entreprises.api.gouv.fr/search?categorie_entreprise=PME%2CETI&page=1&per_page=25";
+  const companyAPI = "https://recherche-entreprises.api.gouv.fr";
+  const companyGroupQuery = "categorie_entreprise=PME%2CETI"//%2CGE"
   const unknownString = "Inconnue";
 
   const [loading, setLoading] = useState(true);
@@ -18,7 +19,7 @@ export default function Home() {
     setCompanies([]);
     setLoading(true);
 
-    fetch(`${companyAPI}/search&page=${page}&per_page=25`)
+    fetch(`${companyAPI}/search?${companyGroupQuery}&page=${page}&per_page=25`)
       .then(result => result.json())
       .then(data => setCompanies(data.results))
       .catch(error => console.log(error))
@@ -42,16 +43,16 @@ export default function Home() {
           </button>
         </div>
         <div className="flex flex-col items-center justify-center gap-3">
-          <div className={loading ? "loader" : undefined}>
+          <div className={loading ? "loader absolute top-2/4 bottom-2/4" : undefined}>
             <div className={loading ? "subloader" : undefined} />
           </div>
-          <div className="grid grid-cols-6 gap-5 m-5">
+          <div className="grid grid-cols-5 gap-5 m-5">
             {companies.map((company) => {
               console.log(company);
               return (
-                <a href="/" key={company.siren + "-" + company.siege.siret}>
-                  <div className=" bg-gray-300 rounded-lg w-64 h-40 pl-3 pt-5">
-                    <h1 className="text-xs">
+                <a href={"/company/" + company.siren} key={company.siren + "-" + company.siege.siret}>
+                  <div className=" bg-gray-300 rounded-lg w-80 h-48 pl-3 pt-5">
+                    <h1 className="text-sm">
                       <i>{company.nom_complet}</i>
                     </h1>
                     <hr className="my-2 w-20" />
