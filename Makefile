@@ -1,3 +1,9 @@
+# Variables
+# - Eslint
+ESLINT_CONFIG = ./.eslintrc.json
+ESLINT_TARGET = ./src/
+
+# Rules
 # - Mandatory
 .PHONY: all help help-md autophony
 
@@ -20,3 +26,6 @@ dev: ## Run the `next dev` environnement.
 # - Utilities
 install: ## Install all needed stuff for the project to run (doesn't include dependencies).
 	@npm install
+
+lint: ## Run Eslint and autofix all files in `./src/`.
+	@npx eslint --config $(ESLINT_CONFIG) --fix $(ESLINT_TARGET)
