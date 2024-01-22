@@ -23,8 +23,8 @@ export default function CompanyDetails({ params }) {
         <main>
             <a href="/">
                 <button
-                  type="button"
-                  className="text-xl flex justify-center items-center shadowy-button sticky left-10 top-5"
+                    type="button"
+                    className="text-xl flex justify-center items-center shadowy-button sticky left-10 top-5"
                 >
                     <FaArrowLeft />
                     {' '}
