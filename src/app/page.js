@@ -50,7 +50,8 @@ export default function Home() {
             <div className="mt-10 flex justify-center items-center flex-col gap-5">
                 <div className="flex justify-center items-center gap-10">
                     <button
-                        disabled={page == 1}
+                        type="button"
+                        disabled={page === 1}
                         className="glass shadowy-button w-36 flex justify-center items-center"
                         onClick={() => {
                             setPage(page - 1);
@@ -59,6 +60,7 @@ export default function Home() {
                         Previous
                     </button>
                     <button
+                        type="button"
                         className="glass shadowy-button w-36 flex justify-center items-center"
                         onClick={() => {
                             setPage(page + 1);
