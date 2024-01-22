@@ -48,7 +48,7 @@ body {
   border: none;
   box-shadow: 0 0.7em 1.5em -0.5em #4d36d0be;
   letter-spacing: 0.05em;
-  border-radius: 20em;
+  border-radius: 1em;
 }
 
 .shadowy-button svg {
