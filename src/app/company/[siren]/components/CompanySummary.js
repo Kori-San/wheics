@@ -6,15 +6,18 @@ import {
     FaHandHoldingDollar,
     FaHandHoldingHeart,
 } from 'react-icons/fa6';
+import GoogleSearch from './button/GoogleSearch';
+import LinkedinSearch from './button/LinkedInSearch';
 
 export default function CompanySummary({ company: companyData }) {
     const unknownString = 'Inconnue';
 
     return (
-
         <div className="flex justify-center flex-col gap-3 w-4/5 bg-gray-300 rounded p-5">
-            <h1 className="text-3xl">
-                <i>{companyData.nom_complet}</i>
+            <h1 className="text-3xl flex items-center gap-3">
+                <p>{companyData.nom_complet}</p>
+                <LinkedinSearch term={companyData.nom_complet} />
+                <GoogleSearch term={`${companyData.nom_complet} ${companyData.siege.geo_adresse}`} />
             </h1>
             <hr className="w-1/6" />
             <div className="flex flex-row items-center gap-1 text-xl">
