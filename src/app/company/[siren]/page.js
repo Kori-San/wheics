@@ -32,8 +32,8 @@ export default function CompanyDetails({ params }) {
                 </button>
             </a>
             <div className="flex justify-center items-center">
-                <div className={loading ? 'loader absolute top-2/4 bottom-2/4' : undefined}>
-                    <div className={loading ? 'subloader' : undefined} />
+                <div id="loader" className={loading ? 'loader absolute top-2/4 bottom-2/4' : undefined}>
+                    <div id="subloader" className={loading ? 'subloader' : undefined} />
                 </div>
                 <div className="min-w-full mx-10 mb-10">
                     {company.map((companyData) => (
