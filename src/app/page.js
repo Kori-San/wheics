@@ -70,8 +70,8 @@ export default function Home() {
                     </button>
                 </div>
                 <div className="flex flex-col items-center justify-center gap-3">
-                    <div className={loading ? 'loader' : undefined}>
-                        <div className={loading ? 'subloader' : undefined} />
+                    <div id="loader" className={loading ? 'loader' : undefined}>
+                        <div id="subloader" className={loading ? 'subloader' : undefined} />
                     </div>
                     <div className="grid grid-cols-5 gap-5 m-5">
                         {companies.map((company) => <CompanyCard key={`${company.siren}-${company.siege.siren}`} company={company} />)}
