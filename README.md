@@ -28,6 +28,10 @@ $ make dev
 - [make](https://www.gnu.org/software/make/)
 - [node.js](https://nodejs.org/en) 
 
+## 📚 Ressources 
+- [Documentation API Sirene](https://www.sirene.fr/static-resources/htm/v_sommaire.htm): Gives all variables that are used by many APIs of the french government like how many employee can you find in a company that have a size of type "53".
+- [NAF Codes List](https://www.insee.fr/fr/information/2120875): Lists all NAF (Nomenclature d’Activités Française) Codes which are used to show what does the company do as their primary activity.
+
 ##
 <a href="https://gitmoji.dev">
   <img
