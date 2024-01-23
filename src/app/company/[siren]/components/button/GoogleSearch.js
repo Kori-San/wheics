@@ -1,13 +1,13 @@
-import { FaGoogle } from 'react-icons/fa6';
+import { FcGoogle } from "react-icons/fc";
 
 export default function GoogleSearch({ term }) {
     return (
         <a
-            className=" bg-red-900 text-xs flex items-center justify-center text-slate-50 gap-1 rounded-md px-2 py-1"
+            className=" bg-slate-700 text-xs flex items-center justify-center text-slate-50 gap-1 rounded-lg py-1 px-2"
             href={`https://www.google.com/search?q=${encodeURIComponent(term)}`}
             target="_blank"
         >
-            <FaGoogle />
+            <FcGoogle size={13}/>
             Rechercher
         </a>
 

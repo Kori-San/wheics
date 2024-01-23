@@ -1,3 +1,5 @@
+import { unknownString } from '@/app/data/globalWording';
+
 import {
     FaLocationDot,
     FaPeopleGroup,
@@ -6,48 +8,31 @@ import {
     FaHandHoldingDollar,
     FaHandHoldingHeart,
 } from 'react-icons/fa6';
-import GoogleSearch from './button/GoogleSearch';
-import LinkedinSearch from './button/LinkedInSearch';
+import CompanySummaryHeader from './summary/CompanyHeaderSummary';
+import CompanySimpleSummary from './summary/CompanySimpleSummary';
+import CompanyAddressSumary from './summary/CompanyAddressSumary';
 
-export default function CompanySummary({ company: companyData }) {
-    const unknownString = 'Inconnue';
-
+export default function CompanySummary({ company }) {
     return (
-        <div className="flex justify-center flex-col gap-3 w-4/5 bg-gray-300 rounded p-5">
-            <h1 className="text-3xl flex items-center gap-3">
-                <p>{companyData.nom_complet}</p>
-                <LinkedinSearch term={companyData.nom_complet} />
-                <GoogleSearch term={`${companyData.nom_complet} ${companyData.siege.geo_adresse}`} />
-            </h1>
-            <hr className="w-1/6" />
-            <div className="flex flex-row items-center gap-1 text-xl">
-                <FaBuilding />
-                <div>
-                    <b>{companyData.categorie_entreprise}</b>
-                    {' '}
-                    - Siren n°
-                    {companyData.siren}
-                </div>
-            </div>
-            <p className="text-xl flex items-center gap-1">
-                <FaLocationDot />
-                {companyData.siege.geo_adresse ?? unknownString}
-            </p>
-            <p className="flex flex-row items-center text-xl gap-1">
+        <div className="flex justify-center flex-col gap-3 w-4/5 bg-gray-200 rounded p-5">
+            <CompanySummaryHeader name={company.nom_complet} address={company.siege.geo_adresse} />
+            <CompanySimpleSummary category={company.categorie_entreprise} siren={company.siren} /> 
+            <CompanyAddressSumary address={company.siege.geo_adresse} />
+              <p className="flex flex-row items-center text-xl gap-1">
                 <FaPeopleGroup />
                 {
-                    companyData.tranche_effectif_salarie
-                        ? `${companyData.tranche_effectif_salarie} personnes recensé en ${companyData.annee_tranche_effectif_salarie}`
+                    company.tranche_effectif_salarie
+                        ? `${company.tranche_effectif_salarie} personnes recensé en ${company.annee_tranche_effectif_salarie}`
                         : unknownString
                 }
             </p>
             <p className="flex flex-row items-center text-xl gap-1">
                 <FaCakeCandles />
                 {' '}
-                {companyData.date_creation ?? unknownString}
+                {company.date_creation ?? unknownString}
             </p>
             <p className="flex flex-row items-center text-xl gap-1">
-                {companyData.complements.est_association ? (
+                {company.complements.est_association ? (
                     <>
                         <FaHandHoldingHeart />
                         {' '}

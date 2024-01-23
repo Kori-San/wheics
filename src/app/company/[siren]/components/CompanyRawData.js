@@ -1,20 +1,20 @@
-import { VscJson } from 'react-icons/vsc';
+import { FcCommandLine } from "react-icons/fc";
 import { nordTheme } from '@uiw/react-json-view/nord';
 import { TriangleSolidArrow } from '@uiw/react-json-view/triangle-solid-arrow';
 
 import JsonView from '@uiw/react-json-view';
 
-export default function CompanyRawData({ company: companyData }) {
+export default function CompanyRawData({ company }) {
     return (
-        <div className="flex justify-center flex-col w-4/5 gap-3 bg-gray-300 rounded p-5">
-            <h1 className="flex items-center gap-1 w-full text-2xl p-3 rounded-md">
-                <VscJson />
+        <div className="flex justify-center flex-col w-4/5 gap-3 bg-slate-600 rounded p-5">
+            <h1 className="text-gray-300 flex items-center gap-1 w-full text-2xl p-3 rounded-md">
+                <FcCommandLine size={50}/>
                 {' '}
                 Raw Data
             </h1>
             <JsonView
-                keyName={companyData.nom_complet}
-                value={companyData}
+                keyName={company.nom_complet}
+                value={company}
                 className="p-5 rounded"
                 style={nordTheme}
                 collapsed={1}
@@ -33,6 +33,5 @@ export default function CompanyRawData({ company: companyData }) {
                 <JsonView.Colon> -&gt; </JsonView.Colon>
             </JsonView>
         </div>
-
     );
 }

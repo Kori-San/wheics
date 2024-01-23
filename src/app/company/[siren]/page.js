@@ -39,6 +39,7 @@ export default function CompanyDetails({ params }) {
                     {company.map((companyData) => (
                         <div className="flex justify-center flex-col gap-5 items-center" key={`${companyData.siren}-${companyData.siege.siret}`}>
                             <CompanySummary company={companyData} />
+                            <hr className='bg-slate-400 border-none w-3/5 h-1'/>
                             <CompanyRawData company={companyData} />
                         </div>
                     ))}
