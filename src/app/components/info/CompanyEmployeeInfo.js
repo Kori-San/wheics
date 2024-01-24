@@ -1,7 +1,7 @@
-import { FcConferenceCall } from "react-icons/fc";
+import { FcConferenceCall } from 'react-icons/fc';
 
-import { trancheEffectifSalarie } from "@/app/data/trancheEffectifSalarie"
-import { unknownString } from "@/app/data/globalWording"
+import { trancheEffectifSalarie } from '@/app/data/trancheEffectifSalarie';
+import { unknownString } from '@/app/data/globalWording';
 
 export default function CompanyEmployeeInfo({ workforceBracket }) {
     const textDisplayed = workforceBracket ? trancheEffectifSalarie[workforceBracket] : unknownString;
@@ -15,5 +15,5 @@ export default function CompanyEmployeeInfo({ workforceBracket }) {
                 {textDisplayed}
             </div>
         </div>
-    )
+    );
 }

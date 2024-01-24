@@ -22,7 +22,7 @@ export default function CompanyDetails({ params }) {
     }, [params.siren]);
     return (
         <main>
-            <ButtonToRoute route="/" message={[<FaArrowLeft />, " Back"]} />
+            <ButtonToRoute route="/" message={[<FaArrowLeft />, ' Back']} />
             <div className="flex justify-center items-center">
                 <div id="loader" className={loading ? 'loader absolute top-2/4 bottom-2/4' : undefined}>
                     <div id="subloader" className={loading ? 'subloader' : undefined} />
@@ -31,7 +31,7 @@ export default function CompanyDetails({ params }) {
                     {company.map((companyData) => (
                         <div className="flex justify-center flex-col gap-5 items-center" key={`${companyData.siren}-${companyData.siege.siret}`}>
                             <CompanySummary company={companyData} />
-                            <hr className='bg-slate-400 border-none w-3/5 h-1' />
+                            <hr className="bg-slate-400 border-none w-3/5 h-1" />
                             <CompanyRawData company={companyData} />
                         </div>
                     ))}

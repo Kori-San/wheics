@@ -12,19 +12,20 @@ export default function VerticalLine({ width, height, color }) {
         throw new Error("Missing prop 'color' on component VerticalLine.");
     }
 
-    if (isNumber(width)) { 
-        width = `${width}px`
+    if (isNumber(width)) {
+        width = `${width}px`;
     }
 
     if (isNumber(height)) {
-        height = `${height}px`
+        height = `${height}px`;
     }
 
     return (
         <div style={{
-            width: width,
-            height: height,
-            backgroundColor: color
-        }} />
-    )
+            width,
+            height,
+            backgroundColor: color,
+        }}
+        />
+    );
 }

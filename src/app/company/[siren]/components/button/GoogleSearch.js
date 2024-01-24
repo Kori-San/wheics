@@ -1,4 +1,4 @@
-import { FcGoogle } from "react-icons/fc";
+import { FcGoogle } from 'react-icons/fc';
 
 export default function GoogleSearch({ term }) {
     return (
@@ -7,7 +7,7 @@ export default function GoogleSearch({ term }) {
             href={`https://www.google.com/search?q=${encodeURIComponent(term)}`}
             target="_blank"
         >
-            <FcGoogle size={13}/>
+            <FcGoogle size={13} />
             <div>
                 Rechercher
             </div>

@@ -1,7 +1,7 @@
-import { FcFactory } from "react-icons/fc";
+import { FcFactory } from 'react-icons/fc';
 
-import { nomenclatureActivitesFrancaise } from "@/app/data/nomenclatureActivitesFrancaise"
-import { unknownString } from "@/app/data/globalWording";
+import { nomenclatureActivitesFrancaise } from '@/app/data/nomenclatureActivitesFrancaise';
+import { unknownString } from '@/app/data/globalWording';
 
 export default function CompanyActivityInfo({ NAFCode }) {
     const textDisplayed = NAFCode ? nomenclatureActivitesFrancaise[NAFCode] : unknownString;
@@ -15,5 +15,5 @@ export default function CompanyActivityInfo({ NAFCode }) {
                 {textDisplayed}
             </div>
         </div>
-    )
+    );
 }

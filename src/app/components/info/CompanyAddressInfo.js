@@ -1,8 +1,8 @@
-import { unknownString } from "@/app/data/globalWording"
-import { FaLocationDot } from "react-icons/fa6"
+import { FaLocationDot } from 'react-icons/fa6';
+import { unknownString } from '@/app/data/globalWording';
 
 export default function CompanyAddressInfo({ address }) {
-    const textDisplayed = address ? address : unknownString;
+    const textDisplayed = address || unknownString;
 
     return (
         <div className="text-xs flex items-center gap-1 " title={textDisplayed}>
@@ -13,5 +13,5 @@ export default function CompanyAddressInfo({ address }) {
                 {textDisplayed}
             </div>
         </div>
-    )
+    );
 }

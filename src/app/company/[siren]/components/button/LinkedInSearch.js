@@ -7,7 +7,7 @@ export default function LinkedinSearch({ term }) {
             href={`https://www.linkedin.com/search/results/companies/?keywords=${encodeURIComponent(term)}`}
             target="_blank"
         >
-            <FaLinkedin size={13}/>
+            <FaLinkedin size={13} />
             Rechercher
         </a>
     );

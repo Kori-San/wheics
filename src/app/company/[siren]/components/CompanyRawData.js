@@ -1,4 +1,4 @@
-import { FcCommandLine } from "react-icons/fc";
+import { FcCommandLine } from 'react-icons/fc';
 import { nordTheme } from '@uiw/react-json-view/nord';
 import { TriangleSolidArrow } from '@uiw/react-json-view/triangle-solid-arrow';
 
@@ -8,7 +8,7 @@ export default function CompanyRawData({ company }) {
     return (
         <div className="flex justify-center flex-col w-4/5 gap-3 bg-slate-600 rounded p-5">
             <h1 className="text-gray-300 flex items-center gap-1 w-full text-2xl p-3 rounded-md">
-                <FcCommandLine size={50}/>
+                <FcCommandLine size={50} />
                 {' '}
                 Raw Data
             </h1>
