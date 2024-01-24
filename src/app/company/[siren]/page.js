@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { FaArrowLeft } from 'react-icons/fa6';
 import CompanySummary from './components/CompanySummary';
 import CompanyRawData from './components/CompanyRawData';
+import ButtonToRoute from '@/app/components/ButtonToRoute';
 
 export default function CompanyDetails({ params }) {
     const companyAPI = 'https://recherche-entreprises.api.gouv.fr';
@@ -21,16 +22,7 @@ export default function CompanyDetails({ params }) {
     }, [params.siren]);
     return (
         <main>
-            <a href="/">
-                <button
-                    type="button"
-                    className="text-xl flex justify-center items-center shadowy-button sticky left-10 top-5"
-                >
-                    <FaArrowLeft />
-                    {' '}
-                    Back
-                </button>
-            </a>
+            <ButtonToRoute route="/" message={[<FaArrowLeft />, " Back"]} />
             <div className="flex justify-center items-center">
                 <div id="loader" className={loading ? 'loader absolute top-2/4 bottom-2/4' : undefined}>
                     <div id="subloader" className={loading ? 'subloader' : undefined} />
@@ -39,7 +31,7 @@ export default function CompanyDetails({ params }) {
                     {company.map((companyData) => (
                         <div className="flex justify-center flex-col gap-5 items-center" key={`${companyData.siren}-${companyData.siege.siret}`}>
                             <CompanySummary company={companyData} />
-                            <hr className='bg-slate-400 border-none w-3/5 h-1'/>
+                            <hr className='bg-slate-400 border-none w-3/5 h-1' />
                             <CompanyRawData company={companyData} />
                         </div>
                     ))}
