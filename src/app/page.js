@@ -2,7 +2,9 @@
 
 import { useCallback, useEffect, useState } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
+import { FaArrowLeftLong, FaArrowRightLong } from 'react-icons/fa6';
 import CompanyCard from './components/CompanyCard';
+import Loader from './components/Loader';
 
 export function capitalize(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -47,36 +49,44 @@ export default function Home() {
 
     return (
         <main>
-            <div className="mt-10 flex justify-center items-center flex-col gap-5">
-                <div className="flex justify-center items-center gap-10">
-                    <button
-                        type="button"
-                        disabled={page === 1}
-                        className="glass shadowy-button w-36 flex justify-center items-center"
-                        onClick={() => {
-                            setPage(page - 1);
-                        }}
-                    >
-                        Previous
-                    </button>
-                    <button
-                        type="button"
-                        className="glass shadowy-button w-36 flex justify-center items-center"
-                        onClick={() => {
-                            setPage(page + 1);
-                        }}
-                    >
-                        Next
-                    </button>
-                </div>
+            <div className="flex justify-center items-center flex-col gap-5">
                 <div className="flex flex-col items-center justify-center gap-3">
-                    <div id="loader" className={loading ? 'loader' : undefined}>
-                        <div id="subloader" className={loading ? 'subloader' : undefined} />
-                    </div>
+                    <Loader toggle={loading} />
                     <div className="grid grid-cols-5 gap-5 m-5">
                         {companies.map((company) => <CompanyCard key={`${company.siren}-${company.siege.siren}`} company={company} />)}
                     </div>
                 </div>
+                {!loading && (
+                    <div className="flex justify-center items-center gap-10 mb-7">
+                        {page !== 1 && (
+                            <button
+                                type="button"
+                                disabled={page === 1}
+                                className="keyboardButton"
+                                onClick={() => {
+                                    setPage(page - 1);
+                                }}
+                                aria-label="Previous"
+                            >
+                                <span><FaArrowLeftLong /></span>
+                            </button>
+
+                        )}
+                        <h1 className="select-none rounded flex items-center justify-center min-w-12 min-h-12 bg-[#e5e7eb] text-[#666666]">
+                            {page}
+                        </h1>
+                        <button
+                            type="button"
+                            className="keyboardButton"
+                            onClick={() => {
+                                setPage(page + 1);
+                            }}
+                            aria-label="Next"
+                        >
+                            <span><FaArrowRightLong /></span>
+                        </button>
+                    </div>
+                )}
             </div>
         </main>
     );

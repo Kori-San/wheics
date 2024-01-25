@@ -1,0 +1,48 @@
+.keyboardButton {
+  padding: 0.1em 0.25em;
+  width: 13em;
+  height: 4.2em;
+  background-color: #e5e7eb;
+  border: 0.08em solid #CACACA;
+  border-radius: 0.3em;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.keyboardButton span {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  bottom: 0.4em;
+  width: 8.25em;
+  height: 2.5em;
+  background-color: #e5e7eb;
+  border-radius: 0.2em;
+  font-size: 1.5em;
+  color: #777777;
+  border: 0.08em solid #CACACA;
+  -webkit-box-shadow: 0 0.4em 0.1em 0.019em #CACACA;
+  box-shadow: 0 0.4em 0.1em 0.019em #CACACA;
+}
+
+.keyboardButton span:hover {
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
+  -webkit-transform: translate(0, 0.4em);
+  -ms-transform: translate(0, 0.4em);
+  transform: translate(0, 0.4em);
+  -webkit-box-shadow: 0 0 0 0 #CACACA;
+  box-shadow: 0 0 0 0 #CACACA;
+}
+
+.keyboardButton span:not(hover) {
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}

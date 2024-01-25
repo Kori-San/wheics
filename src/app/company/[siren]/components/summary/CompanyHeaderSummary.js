@@ -4,11 +4,11 @@ import LinkedinSearch from '../button/LinkedInSearch';
 
 export default function CompanySummaryHeader({ name, address }) {
     return (
-        <div className="flex flex-row items-center">
+        <div className="flex flex-row items-center hover:translate-x-1.5 transition duration-300 ease-in-out">
             <div className="w-6 flex justify-center items-center">
                 <VerticalLine width={3} height={75} color="#475569" />
             </div>
-            <div className="flex flex-col gap-1 py-1">
+            <div className="flex flex-col gap-1 py-1 text-ellipsis whitespace-nowrap overflow-hidden">
                 <h1 title={name} className="text-3xl overflow-hidden text-ellipsis whitespace-nowrap">
                     <b>{name}</b>
                 </h1>

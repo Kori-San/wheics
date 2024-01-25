@@ -9,37 +9,3 @@ body {
   background-size: cover;
   background-position: -50%;
 }
-
-.shadowy-button {
-  display: flex;
-  align-items: center;
-  font-family: inherit;
-  font-weight: 500;
-  font-size: 17px;
-  padding: 0.8em 1.5em 0.8em 1.2em;
-  color: white;
-  background: #ad5389;
-  background: linear-gradient(0deg, rgba(77, 54, 208, 1) 0%, rgba(132, 116, 254, 1) 100%);
-  border: none;
-  box-shadow: 0 0.7em 1.5em -0.5em #4d36d0be;
-  letter-spacing: 0.05em;
-  border-radius: 1em;
-}
-
-.shadowy-button svg {
-  margin-right: 8px;
-}
-
-.shadowy-button:hover {
-  box-shadow: 0 0.5em 1.5em -0.5em #4d36d0be;
-}
-
-.shadowy-button:active {
-  box-shadow: 0 0.3em 1em -0.5em #4d36d0be;
-}
-
-.shadowy-button:disabled {
-  background: linear-gradient(0deg, rgba(77, 54, 208, 0.25) 0%, rgba(132, 116, 254, 0.25) 100%);
-  box-shadow: none;
-  cursor: not-allowed;
-}
