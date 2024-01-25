@@ -36,6 +36,8 @@ $ make dev
 - [SVG Backgrounds](https://www.svgbackgrounds.com/set/free-svg-backgrounds-and-patterns/): Allows you to generate an SVG Background and use it as CSS in the code.
 - [Icon Generator IA](https://www.icongeneratorai.com/): Help you generate an Icon using an IA, you can choose your style, color and describe it using a prompt.
 - [UIVerse](https://uiverse.io/): Open-Source UI library that you can use and modify as you wish.
+#### 🤓 Best Practices
+- [Browserslist](https://browsersl.ist/): Let you define the list of browsers you want your website to be compatible with. Can be used with autoprefixer, eslint, doiuse ect...
 
 ##
 <a href="https://gitmoji.dev">
