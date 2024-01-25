@@ -26,9 +26,6 @@ export default function CompanyDetails({ params }) {
             <ButtonToRoute route="%PREVIOUS%" message={[<FaArrowLeft key={Math.floor(Math.random() * 1024)} />, ' Back']} />
             <div className="flex justify-center items-center">
                 <Loader toggle={loading} />
-                <div id="loader" className={loading ? 'loader absolute top-2/4 bottom-2/4' : undefined}>
-                    <div id="subloader" className={loading ? 'subloader' : undefined} />
-                </div>
                 <div className="min-w-full mx-10 mb-10">
                     {company.map((companyData) => (
                         <div className="flex justify-center flex-col gap-5 items-center" key={`${companyData.siren}-${companyData.siege.siret}`}>
