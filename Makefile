@@ -1,7 +1,7 @@
 # Variables
 LOG_FOLDER = ./logs
 # - Eslint
-ESLINT_CONFIG = ./.eslintrc.json
+ESLINT_CONFIG = ./config/.eslintrc.json
 ESLINT_TARGET = ./src
 
 # - DoIUse
