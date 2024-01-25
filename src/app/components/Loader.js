@@ -1,12 +1,12 @@
 export default function Loader({ toggle, message }) {
     if (toggle) {
         return (
-            <div class="loader-container">
-                <div class="loader-folder">
-                    <div class="loader-top" />
-                    <div class="loader-bottom" />
+            <div className="loader-container">
+                <div className="loader-folder">
+                    <div className="loader-top" />
+                    <div className="loader-bottom" />
                 </div>
-                <div class="loader-title">{message ?? '' }</div>
+                <div className="loader-title">{message ?? ''}</div>
             </div>
         );
     }
