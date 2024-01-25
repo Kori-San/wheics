@@ -6,6 +6,8 @@ import { FaArrowLeftLong, FaArrowRightLong } from 'react-icons/fa6';
 import CompanyCard from './components/CompanyCard';
 import Loader from './components/Loader';
 
+const companyFetched = 20;
+
 export function capitalize(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
@@ -34,7 +36,7 @@ export default function Home() {
         setCompanies([]);
         setLoading(true);
 
-        fetch(`${companyAPI}/search?${companyGroupQuery}&page=${page}&per_page=25`)
+        fetch(`${companyAPI}/search?${companyGroupQuery}&page=${page}&per_page=${companyFetched}`)
             .then((result) => result.json())
             .then((data) => {
                 setCompanies(data.results);
@@ -52,24 +54,24 @@ export default function Home() {
             <div className="flex justify-center items-center flex-col gap-5">
                 <div className="flex flex-col items-center justify-center gap-3">
                     <Loader toggle={loading} />
-                    <div className="grid grid-cols-5 gap-5 m-5">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-7 m-5">
                         {companies.map((company) => <CompanyCard key={`${company.siren}-${company.siege.siren}`} company={company} />)}
                     </div>
                 </div>
                 {!loading && (
                     <div className="flex justify-center items-center gap-10 mb-7">
-                        
-                            <button
-                                type="button"
-                                disabled={page === 1}
-                                className="keyboardButton"
-                                onClick={() => {
-                                    setPage(page - 1);
-                                }}
-                                aria-label="Previous"
-                            >
-                                <span><FaArrowLeftLong /></span>
-                            </button>
+
+                        <button
+                            type="button"
+                            disabled={page === 1}
+                            className="keyboardButton"
+                            onClick={() => {
+                                setPage(page - 1);
+                            }}
+                            aria-label="Previous"
+                        >
+                            <span><FaArrowLeftLong /></span>
+                        </button>
 
                         <h1 className="select-none rounded flex items-center justify-center min-w-12 min-h-12 bg-[#e5e7eb] text-[#666666]">
                             {page}
