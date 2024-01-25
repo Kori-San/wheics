@@ -58,7 +58,7 @@ export default function Home() {
                 </div>
                 {!loading && (
                     <div className="flex justify-center items-center gap-10 mb-7">
-                        {page !== 1 && (
+                        
                             <button
                                 type="button"
                                 disabled={page === 1}
@@ -71,7 +71,6 @@ export default function Home() {
                                 <span><FaArrowLeftLong /></span>
                             </button>
 
-                        )}
                         <h1 className="select-none rounded flex items-center justify-center min-w-12 min-h-12 bg-[#e5e7eb] text-[#666666]">
                             {page}
                         </h1>
