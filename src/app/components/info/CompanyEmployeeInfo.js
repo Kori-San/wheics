@@ -4,7 +4,9 @@ import { trancheEffectifSalarie } from '@/app/data/trancheEffectifSalarie';
 import { unknownString } from '@/app/data/globalWording';
 
 export default function CompanyEmployeeInfo({ workforceBracket }) {
-    const textDisplayed = workforceBracket ? trancheEffectifSalarie[workforceBracket] : unknownString;
+    const textDisplayed = workforceBracket
+        ? trancheEffectifSalarie[workforceBracket]
+        : unknownString;
 
     return (
         <div className="flex flex-row items-center text-xs gap-1">

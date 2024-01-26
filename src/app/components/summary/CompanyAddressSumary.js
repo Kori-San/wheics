@@ -2,7 +2,7 @@ import { FaLocationDot } from 'react-icons/fa6';
 import { unknownString } from '@/app/data/globalWording';
 
 export default function CompanyAddressSumary({ name, address }) {
-    const query = address + " " + name;
+    const query = `${address} ${name}`;
     const googleMapsURL = address && name ? `https://maps.google.com?q=${encodeURIComponent(query)}` : undefined;
 
     return (

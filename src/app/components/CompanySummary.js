@@ -1,13 +1,3 @@
-import {
-    FaLocationDot,
-    FaPeopleGroup,
-    FaBuilding,
-    FaCakeCandles,
-    FaHandHoldingDollar,
-    FaHandHoldingHeart,
-} from 'react-icons/fa6';
-import { unknownString } from '@/app/data/globalWording';
-
 import CompanySummaryHeader from './summary/CompanyHeaderSummary';
 import CompanySimpleSummary from './summary/CompanySimpleSummary';
 import CompanyAddressSumary from './summary/CompanyAddressSumary';

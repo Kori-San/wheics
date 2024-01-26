@@ -1,4 +1,4 @@
-export const trancheEffectifSalarie = {
+const trancheEffectifSalarie = {
     NN: 'Unité non-employeuse ou présumée non-employeuse (faute de déclaration reçue)',
     '00': "0 salarié (n'ayant pas d'effectif au 31/12 mais ayant employé des salariés au cours de l'année de référence)",
     '01': '1 ou 2 salariés',
@@ -16,3 +16,5 @@ export const trancheEffectifSalarie = {
     52: '5 000 à 9 999 salariés',
     53: '10 000 salariés et plus',
 };
+
+export default trancheEffectifSalarie;

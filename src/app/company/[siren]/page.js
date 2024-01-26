@@ -17,7 +17,7 @@ export default function CompanyDetails({ params }) {
         fetch(`${companyAPI}/search?q=${params.siren}&page=1&per_page=1`)
             .then((result) => result.json())
             .then((data) => setCompany(data.results))
-            .catch((error) => console.log(error));
+            .catch();
 
         setLoading(false);
     }, [params.siren]);

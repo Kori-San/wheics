@@ -17,6 +17,12 @@
     "react/jsx-indent-props": [
       "error",
       4
+    ],
+    "import/no-unresolved": [
+      "off"
+    ],
+    "import/extensions": [
+      "off"
     ]
   }
 }

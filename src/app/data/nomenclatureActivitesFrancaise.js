@@ -1,4 +1,4 @@
-export const nomenclatureActivitesFrancaise = {
+const nomenclatureActivitesFrancaise = {
     '01.11Z': "Culture de céréales (à l'exception du riz), de légumineuses et de graines oléagineuses",
     '01.12Z': 'Culture du riz',
     '01.13Z': 'Culture de légumes, de melons, de racines et de tubercules',
@@ -732,3 +732,5 @@ export const nomenclatureActivitesFrancaise = {
     '98.20Z': 'Activités indifférenciées des ménages en tant que producteurs de services pour usage propre',
     '99.00Z': 'Activités des organisations et organismes extraterritoriaux',
 };
+
+export default nomenclatureActivitesFrancaise;

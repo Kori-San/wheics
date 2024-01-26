@@ -1,6 +1,6 @@
 function isNumber(expressionToCheck) {
     /* True for numbers, false if contains an alphabetical character */
-    return !isNaN(+expressionToCheck);
+    return !Number.isNaN(+expressionToCheck);
 }
 
 export default function VerticalLine({ width, height, color }) {
@@ -12,18 +12,13 @@ export default function VerticalLine({ width, height, color }) {
         throw new Error("Missing prop 'color' on component VerticalLine.");
     }
 
-    if (isNumber(width)) {
-        width = `${width}px`;
-    }
-
-    if (isNumber(height)) {
-        height = `${height}px`;
-    }
+    const finalWidth = isNumber(width) ? `${width}px` : width;
+    const finalHeight = isNumber(height) ? `${height}px` : height;
 
     return (
         <div style={{
-            width,
-            height,
+            width: finalWidth,
+            height: finalHeight,
             backgroundColor: color,
         }}
         />
