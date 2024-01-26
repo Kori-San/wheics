@@ -1,8 +1,8 @@
 import { FaLocationDot } from 'react-icons/fa6';
 import { unknownString } from '@/app/data/globalWording';
 
-export default function CompanyAddressSumary({ address, x, y }) {
-    const googleMapsURL = x && y ? `https://maps.google.com?q=${x},${y}` : undefined;
+export default function CompanyAddressSumary({ address }) {
+    const googleMapsURL = address ? `https://maps.google.com?q=${encodeURIComponent(address)}` : undefined;
 
     return (
         <a

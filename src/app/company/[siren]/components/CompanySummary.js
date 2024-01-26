@@ -18,11 +18,7 @@ export default function CompanySummary({ company }) {
         <div className="flex justify-center flex-col gap-3 w-4/5 bg-gray-200 rounded p-5">
             <CompanySummaryHeader name={company.nom_complet} address={company.siege.geo_adresse} />
             <CompanySimpleSummary category={company.categorie_entreprise} siren={company.siren} />
-            <CompanyAddressSumary
-                address={company.siege.geo_adresse}
-                x={company.siege.latitude}
-                y={company.siege.longitude}
-            />
+            <CompanyAddressSumary address={company.siege.geo_adresse} />
             <CompanyEmployeeSummary
                 workforceBracket={company.tranche_effectif_salarie}
                 year={company.annee_tranche_effectif_salarie}
