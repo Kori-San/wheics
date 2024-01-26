@@ -8,10 +8,6 @@ import Loader from './components/Loader';
 
 const companyFetched = 20;
 
-export function capitalize(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-}
-
 export default function Home() {
     const searchParams = useSearchParams();
     const router = useRouter();
