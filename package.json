@@ -4,7 +4,7 @@
   "private": true,
   "browserslist": [
     ">0.3%",
-    "last 5 versions and not dead and fully supports es6-module",
+    "last 5 versions and not dead",
     "not op_mini all"
   ],
   "scripts": {

@@ -5,7 +5,7 @@ ESLINT_CONFIG = ./.eslintrc.json
 ESLINT_TARGET = ./src
 
 # - DoIUse
-DOIUSE_BROWSERS = ">0.3%, last 5 versions and not dead and fully supports es6-module, not op_mini all"
+DOIUSE_BROWSERS = ">0.3%, last 5 versions and not dead, not op_mini all"
 DOIUSE_TARGET = ./src 
 
 # Rules
