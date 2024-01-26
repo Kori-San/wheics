@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import { FaArrowLeft } from 'react-icons/fa6';
-import CompanySummary from '@/app/components/summary/CompanySummary';
-import CompanyRawData from '@/app/components/summary/CompanyRawData';
-import ButtonToRoute from '@/app/components/ButtonToRoute';
+import CompanySummary from '@/app/components/CompanySummary';
+import CompanyRawData from '@/app/components/CompanyRawData';
+import ButtonToRoute from '@/app/components/button/ButtonToRoute';
 import Loader from '@/app/components/Loader';
 
 export default function CompanyDetails({ params }) {
@@ -21,6 +21,7 @@ export default function CompanyDetails({ params }) {
 
         setLoading(false);
     }, [params.siren]);
+
     return (
         <main>
             <ButtonToRoute route="%PREVIOUS%" message={[<FaArrowLeft key={Math.floor(Math.random() * 1024)} />, ' Back']} />
