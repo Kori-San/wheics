@@ -1,6 +1,6 @@
 import { FcFactory } from 'react-icons/fc';
 
-import { nomenclatureActivitesFrancaise } from '@/app/data/nomenclatureActivitesFrancaise';
+import nomenclatureActivitesFrancaise from '@/app/data/nomenclatureActivitesFrancaise';
 import { unknownString } from '@/app/data/globalWording';
 
 export default function CompanyActivityInfo({ NAFCode }) {
