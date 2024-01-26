@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import { FaArrowLeft } from 'react-icons/fa6';
-import CompanySummary from './components/CompanySummary';
-import CompanyRawData from './components/CompanyRawData';
+import CompanySummary from '@/app/components/summary/CompanySummary';
+import CompanyRawData from '@/app/components/summary/CompanyRawData';
 import ButtonToRoute from '@/app/components/ButtonToRoute';
 import Loader from '@/app/components/Loader';
 
