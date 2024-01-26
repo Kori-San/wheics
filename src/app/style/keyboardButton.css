@@ -33,15 +33,18 @@
 }
 
 .keyboardButton:disabled span {
-  background-color: #CACACA;
-  background: repeating-linear-gradient(
-    -45deg,
-    #e5e7eb,
-    #e5e7eb 10px,
-    #CACACA 10px,
-    #CACACA 20px
-  ); 
   cursor: default;
+  background-color: #CACACA;
+  background: repeating-linear-gradient(-45deg,
+      #e5e7eb,
+      #e5e7eb 10px,
+      #CACACA 10px,
+      #CACACA 20px);
+  -webkit-transform: translate(0, 0.1em);
+  -ms-transform: translate(0, 0.1em);
+  transform: translate(0, 0.1em);
+  -webkit-box-shadow: 0 0.15em 0.1em 0.019em #CACACA;
+  box-shadow: 0 0.15em 0.1em 0.019em #CACACA;
 }
 
 .keyboardButton:not([disabled]) span:hover {
