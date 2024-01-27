@@ -1,7 +1,7 @@
-import CompanySummaryHeader from './summary/CompanyHeaderSummary';
-import CompanySimpleSummary from './summary/CompanySimpleSummary';
-import CompanyAddressSumary from './summary/CompanyAddressSumary';
-import CompanyEmployeeSummary from './summary/CompanyEmployeeSummary';
+import CompanySummaryHeader from './companySummary/CompanyHeaderSummary';
+import CompanySimpleSummary from './companySummary/CompanySimpleSummary';
+import CompanyAddressSumary from './companySummary/CompanyAddressSumary';
+import CompanyEmployeeSummary from './companySummary/CompanyEmployeeSummary';
 
 export default function CompanySummary({ company }) {
     const address = company.siege.geo_adresse ?? company.siege.adresse;

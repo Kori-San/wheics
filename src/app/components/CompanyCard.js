@@ -1,8 +1,8 @@
-import CompanyNameInfo from './info/CompanyNameInfo';
-import CompanySimpleInfo from './info/CompanySimpleInfo';
-import CompanyAddressInfo from './info/CompanyAddressInfo';
-import CompanyEmployeeInfo from './info/CompanyEmployeeInfo';
-import CompanyActivityInfo from './info/CompanyActivityInfo';
+import CompanyNameInfo from './companyInfo/CompanyNameInfo';
+import CompanySimpleInfo from './companyInfo/CompanySimpleInfo';
+import CompanyAddressInfo from './companyInfo/CompanyAddressInfo';
+import CompanyEmployeeInfo from './companyInfo/CompanyEmployeeInfo';
+import CompanyActivityInfo from './companyInfo/CompanyActivityInfo';
 
 export default function CompanyCard({ company }) {
     const address = company.siege.geo_adresse ?? company.siege.adresse;
