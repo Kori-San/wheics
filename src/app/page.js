@@ -5,6 +5,7 @@ import { useSearchParams, useRouter } from 'next/navigation';
 import { FaArrowLeftLong, FaArrowRightLong } from 'react-icons/fa6';
 import CompanyCard from './components/CompanyCard';
 import Loader from './components/Loader';
+import KeyboardButton from './components/button/KeyboardButton';
 
 const companyFetched = 20;
 
@@ -56,32 +57,20 @@ export default function Home() {
                 </div>
                 {!loading && (
                     <div className="flex justify-center items-center gap-10 mb-7">
-
-                        <button
-                            type="button"
+                        <KeyboardButton
                             disabled={page === 1}
-                            className="keyboardButton"
-                            onClick={() => {
-                                setPage(page - 1);
-                            }}
-                            aria-label="Previous"
-                        >
-                            <span><FaArrowLeftLong /></span>
-                        </button>
-
+                            onClick={() => { setPage(page - 1); }}
+                            label="Previous"
+                            message={<FaArrowLeftLong />}
+                        />
                         <h1 className="select-none rounded flex items-center justify-center min-w-12 min-h-12 bg-[#e5e7eb] text-[#666666]">
                             {page}
                         </h1>
-                        <button
-                            type="button"
-                            className="keyboardButton"
-                            onClick={() => {
-                                setPage(page + 1);
-                            }}
-                            aria-label="Next"
-                        >
-                            <span><FaArrowRightLong /></span>
-                        </button>
+                        <KeyboardButton
+                            onClick={() => { setPage(page + 1); }}
+                            label="Next"
+                            message={<FaArrowRightLong />}
+                        />
                     </div>
                 )}
             </div>
