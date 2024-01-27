@@ -3,7 +3,7 @@ import { FcFactory } from 'react-icons/fc';
 import nomenclatureActivitesFrancaise from '@/app/data/nomenclatureActivitesFrancaise';
 import { unknownString } from '@/app/data/globalWording';
 
-export default function CompanyActivityInfo({ NAFCode }) {
+export default function CompanyActivityCardInfo({ NAFCode }) {
     const textDisplayed = NAFCode ? nomenclatureActivitesFrancaise[NAFCode] : unknownString;
 
     return (

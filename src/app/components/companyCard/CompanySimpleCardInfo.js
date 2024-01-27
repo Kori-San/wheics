@@ -1,6 +1,6 @@
 import { FcAbout } from 'react-icons/fc';
 
-export default function CompanySimpleInfo({ category, siren }) {
+export default function CompanySimpleCardInfo({ category, siren }) {
     return (
         <h2 className="text-xs flex items-center gap-1">
             <div className=" w-5 flex justify-center items-center">

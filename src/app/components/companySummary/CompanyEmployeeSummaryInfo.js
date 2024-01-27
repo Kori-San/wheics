@@ -3,7 +3,7 @@ import { FcConferenceCall } from 'react-icons/fc';
 import trancheEffectifSalarie from '@/app/data/trancheEffectifSalarie';
 import { unknownString, unknownDate } from '@/app/data/globalWording';
 
-export default function CompanyEmployeeSummary({ workforceBracket, year }) {
+export default function CompanyEmployeeSummaryInfo({ workforceBracket, year }) {
     const textDisplayed = workforceBracket
         ? `${trancheEffectifSalarie[workforceBracket]} (${year ?? unknownDate})`
         : unknownString;

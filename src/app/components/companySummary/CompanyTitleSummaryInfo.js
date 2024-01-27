@@ -2,7 +2,7 @@ import VerticalLine from '@/app/components/VerticalLine';
 import GoogleSearch from '../button/GoogleSearch';
 import LinkedinSearch from '../button/LinkedInSearch';
 
-export default function CompanySummaryHeader({ name, address }) {
+export default function CompanyTitleSummaryInfo({ name, address }) {
     return (
         <div className="flex flex-row items-center hover:translate-x-1.5 transition duration-300 ease-in-out">
             <div className="w-6 flex justify-center items-center">

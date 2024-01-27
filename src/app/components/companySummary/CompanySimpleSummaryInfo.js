@@ -1,6 +1,6 @@
 import { FcAbout } from 'react-icons/fc';
 
-export default function CompanySimpleSummary({ category, siren }) {
+export default function CompanySimpleSummaryInfo({ category, siren }) {
     const annuaireEntreprisesURL = `https://annuaire-entreprises.data.gouv.fr/entreprise/${siren}`;
 
     return (
