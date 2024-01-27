@@ -6,6 +6,7 @@ import { FaArrowLeftLong, FaArrowRightLong } from 'react-icons/fa6';
 import CompanyCard from './components/CompanyCard';
 import Loader from './components/Loader';
 import KeyboardButton from './components/button/KeyboardButton';
+import KeyboardMessage from './components/message/KeyboardMessage';
 
 const companyFetched = 20;
 
@@ -36,7 +37,7 @@ export default function Home() {
         fetch(`${companyAPI}/search?${companyGroupQuery}&page=${page}&per_page=${companyFetched}`)
             .then((result) => result.json())
             .then((data) => {
-                setCompanies(data.results);
+                setCompanies(data.results ?? []);
                 setLoading(false);
             })
             .catch(() => {
@@ -49,29 +50,34 @@ export default function Home() {
     return (
         <main>
             <div className="flex justify-center items-center flex-col gap-5">
-                <div className="flex flex-col items-center justify-center gap-3">
-                    <Loader toggle={loading} />
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-7 m-5">
-                        {companies.map((company) => <CompanyCard key={`${company.siren}-${company.siege.siren}`} company={company} />)}
-                    </div>
-                </div>
+                <Loader toggle={loading} />
                 {!loading && (
-                    <div className="flex justify-center items-center gap-10 mb-7">
-                        <KeyboardButton
-                            disabled={page === 1}
-                            onClick={() => { setPage(page - 1); }}
-                            label="Previous"
-                            message={<FaArrowLeftLong />}
-                        />
-                        <h1 className="select-none rounded flex items-center justify-center min-w-12 min-h-12 bg-[#e5e7eb] text-[#666666]">
-                            {page}
-                        </h1>
-                        <KeyboardButton
-                            onClick={() => { setPage(page + 1); }}
-                            label="Next"
-                            message={<FaArrowRightLong />}
-                        />
-                    </div>
+                    <>
+                        <div className="flex flex-col items-center justify-center gap-3">
+                            { companies.length === 0
+                                ? <p className="w-full h-screen text-gray-300 font-bold">{emptyCompanyList}</p>
+                                : (
+                                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-7 m-5">
+                                        {companies.map((company) => <CompanyCard key={`${company.siren}-${company.siege.siren}`} company={company} />)}
+                                    </div>
+                                )}
+                        </div>
+
+                        <div className="flex justify-center items-center gap-10 mb-7">
+                            <KeyboardButton
+                                disabled={page === 1}
+                                onClick={() => { setPage(page - 1); }}
+                                label="Previous"
+                                message={<FaArrowLeftLong />}
+                            />
+                            <KeyboardMessage message={page} />
+                            <KeyboardButton
+                                onClick={() => { setPage(page + 1); }}
+                                label="Next"
+                                message={<FaArrowRightLong />}
+                            />
+                        </div>
+                    </>
                 )}
             </div>
         </main>
