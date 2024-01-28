@@ -10,7 +10,7 @@ export default function RootHeader({ setSearchQuery, setPage }) {
                     </a>
                 </div>
                 <input
-                    className="w-96 px-2 rounded-e searchBar text-gray-600"
+                    className=" w-96 focus:bg-gray-100 focus:text-gray-600 bg-white transition duration-300 ease-in-out px-2 rounded-e searchBar text-gray-400"
                     placeholder="SIREN, Dénomination ou Dirigeant"
                     onChange={(event) => {
                         setSearchQuery(event.target.value);
