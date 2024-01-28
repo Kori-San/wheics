@@ -25,7 +25,7 @@ autophony: ## Generate a .PHONY rule for your Makefile using all rules in the Ma
 	@grep -oE "^[a-zA-Z-]*\:" $(MAKEFILE_LIST) | sed "s/://g" | xargs echo ".PHONY:"
 
 # - Simple Workflow
-dev: ## Run the `next dev` environnement.
+dev: install ## Run the `next dev` environnement.
 	@npm run dev
 
 # - Utilities
@@ -39,4 +39,3 @@ eslint: ## Run Eslint and autofix all files in `./src/`.
 doiuse: ## Run DoIUse to check CSS Compatibility
 	@mkdir -p $(LOG_FOLDER)/$$(date "+%Y-%m-%d")/
 	@npx doiuse -b $(DOIUSE_BROWSERS) $$(find $(DOIUSE_TARGET) -name "*.css" -type f) | tee -a $(LOG_FOLDER)/$$(date "+%Y-%m-%d")/doiuse.$$(date "+%Y-%m-%d.%H:%M:%S").log
-
