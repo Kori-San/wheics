@@ -1,11 +1,12 @@
 import { GiFedora } from 'react-icons/gi';
+import { noResults } from '../data/globalWording';
 
-export default function NoResults({ message }) {
+export default function NoResults() {
     return (
-        <div className="h-[500px] my-32 flex justify-center items-center flex-col">
+        <div className="h-[400px] my-28 flex justify-center items-center flex-col">
             <GiFedora size={350} style={{ fill: 'white' }} />
             <p className="text-5xl text-gray-300 font-bold">
-                {message}
+                {noResults}
             </p>
         </div>
     );
