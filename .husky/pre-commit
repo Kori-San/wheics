@@ -1,6 +1,6 @@
 #!/bin/bash
 
 ESLINT_CONF="./.eslintrc.json"
-ESLINT_TARGET="../src"
+ESLINT_TARGET="./src"
 
 npx eslint --config "${ESLINT_CONF}" "${ESLINT_TARGET}" || exit 1
