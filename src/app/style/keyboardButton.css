@@ -1,6 +1,6 @@
 .keyboardButton {
   padding: 0.1em 0.25em;
-  width: 13em;
+  min-width: 8.5em;
   height: 4.2em;
   background-color: #e5e7eb;
   border: 0.08em solid #CACACA;
@@ -21,7 +21,7 @@
   -ms-flex-align: center;
   align-items: center;
   bottom: 0.4em;
-  width: 8.25em;
+  min-width: 5.25em;
   height: 2.5em;
   background-color: #e5e7eb;
   border-radius: 0.2em;
