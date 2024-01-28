@@ -3,6 +3,4 @@
 ESLINT_CONF="./.eslintrc.json"
 ESLINT_TARGET="./src"
 
-echo "$(ls)"
-
-npx eslint --config "${ESLINT_CONF}" "${ESLINT_TARGET}" || exit 1
+npx eslint --config "${ESLINT_CONF}" "${ESLINT_TARGET}"
