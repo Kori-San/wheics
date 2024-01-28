@@ -17,15 +17,21 @@ export default function Home() {
     const router = useRouter();
 
     /* Define multiple ReactHooks */
+    /* - Loading phase Specific Hooks   */
     const [retryTrigger, setRetryTrigger] = useState(false);
     const [loading, setLoading] = useState(true);
     const [companies, setCompanies] = useState([]);
 
+    /* - URL Params Hooks */
     const searchParams = useSearchParams();
     const basePage = searchParams.has('page') ? parseInt(searchParams.get('page'), 10) : 1;
+    /* -- Page Hooks */
     const [page, setPage] = useState(basePage !== 0 ? basePage : 1);
     const [maxPage, setMaxPage] = useState();
-    const [searchQuery, setSearchQuery] = useState('');
+
+    /* -- Query Hooks */
+    const baseQuery = searchParams.has('q') ? searchParams.get('q') : '';
+    const [searchQuery, setSearchQuery] = useState(baseQuery);
 
     /* Update URL Params */
     const updateURLParams = useCallback(() => {
@@ -48,10 +54,14 @@ export default function Home() {
 
     /* Load data from API using fetch everytime one of the dependencies is changed */
     useEffect(() => {
+        /* - Reset Page */
         setCompanies([]);
         setLoading(true);
+
+        /* - Fetch Data */
         fetch(rechercheEntrepriseQueryBuilder(page, searchQuery))
             .then((result) => {
+                /* -- Return to default page if error */
                 if (result.status === 400) {
                     setPage(1);
                     return undefined;
@@ -60,14 +70,17 @@ export default function Home() {
                 return result.json();
             })
             .then((data) => {
+                /* -- Set fetched data and hooks */
                 setCompanies(data.results ?? []);
                 setMaxPage(data.total_pages ?? 1);
                 setLoading(false);
             })
             .catch(() => {
+                /* -- Retry data fetching on error */
                 setRetryTrigger(!retryTrigger);
             });
 
+        /* - Update URL Params */
         updateURLParams();
     }, [page, retryTrigger, updateURLParams, searchQuery]);
 
