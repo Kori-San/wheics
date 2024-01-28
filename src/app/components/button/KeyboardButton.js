@@ -1,5 +1,5 @@
 export default function KeyboardButton({
-    disabled = false, onClick, message, label = undefined,
+    disabled = false, onClick = undefined, message, label = undefined,
 }) {
     return (
         <button
