@@ -3,7 +3,7 @@ import CompanyBossCard from './companyBosses/CompanyBossCard';
 
 export default function CompanyBosses({ dirigeants }) {
     return (
-        <div className="w-4/5 p-5 rounded bg-slate-50">
+        <div className="w-4/5 p-5 rounded bg-gray-200">
             <p className="text-3xl font-bold">{dirigeants.length > 1 ? 'Dirigeants' : 'Dirigeant'}</p>
             <hr className="w-full border mt-2 mb-3 border-slate-900" />
             { dirigeants.length !== 0 ? (
