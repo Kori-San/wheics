@@ -1,5 +1,5 @@
 import categorieEntrepriseOptions from '@/app/data/select/categorieEntreprise';
-import categoryListToString from '../companyCategories/categoryListToString';
+import optionListToString from '../react-select/optionListToString';
 
 export default function rechercheEntrepriseQueryBuilder(page, searchQuery, companyCategories) {
     const companyAPIEndpoint = 'https://recherche-entreprises.api.gouv.fr/search?';
@@ -14,7 +14,7 @@ export default function rechercheEntrepriseQueryBuilder(page, searchQuery, compa
     let categories;
 
     if (companyCategories && companyCategories.length > 0) {
-        categories = categoryListToString(companyCategories);
+        categories = optionListToString(companyCategories);
     } else {
         categories = categorieEntrepriseOptions[0].value;
     }

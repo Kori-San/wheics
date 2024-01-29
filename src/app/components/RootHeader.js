@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 import Select from 'react-select';
 import categorieEntrepriseOptions from '../data/select/categorieEntreprise';
-import categoryStringToList from '../lib/companyCategories/categoryStringToList';
+import optionStringToList from '../lib/react-select/optionStringToList';
 
 export default function RootHeader({ setSearchQuery, setPage, setCompanyCategories }) {
     const searchParams = useSearchParams();
@@ -33,7 +33,7 @@ export default function RootHeader({ setSearchQuery, setPage, setCompanyCategori
                 isSearchable
                 defaultValue={
                     searchParams.has('categories') && searchParams.get('categories')
-                        ? categoryStringToList(searchParams.get('categories'))
+                        ? optionStringToList(searchParams.get('categories'), categorieEntrepriseOptions)
                         : categorieEntrepriseOptions[0]
                 }
                 options={categorieEntrepriseOptions}

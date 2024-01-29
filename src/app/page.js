@@ -12,8 +12,9 @@ import KeyboardMessage from './components/message/KeyboardMessage';
 
 import rechercheEntrepriseQueryBuilder from './lib/api/rechercheEntreprise';
 import RootHeader from './components/RootHeader';
-import categoryListToString from './lib/companyCategories/categoryListToString';
-import categoryStringToList from './lib/companyCategories/categoryStringToList';
+import optionListToString from './lib/react-select/optionListToString';
+import optionStringToList from './lib/react-select/optionStringToList';
+import categorieEntrepriseOptions from './data/select/categorieEntreprise';
 
 export default function Home() {
     const router = useRouter();
@@ -39,7 +40,7 @@ export default function Home() {
     const baseStringCategories = searchParams.has('categories') && searchParams.get('categories')
         ? searchParams.get('categories')
         : '';
-    const baseCategories = categoryStringToList(baseStringCategories);
+    const baseCategories = optionStringToList(baseStringCategories, categorieEntrepriseOptions);
 
     const [companyCategories, setCompanyCategories] = useState(baseCategories);
 
@@ -60,7 +61,7 @@ export default function Home() {
         }
 
         if (companyCategories && companyCategories.length > 0) {
-            const categories = categoryListToString(companyCategories);
+            const categories = optionListToString(companyCategories);
             params.set('categories', categories);
         } else {
             params.delete('categories');
