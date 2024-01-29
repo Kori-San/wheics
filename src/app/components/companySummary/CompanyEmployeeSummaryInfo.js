@@ -5,7 +5,7 @@ import { unknownString, unknownDate } from '@/app/data/globalWording';
 
 export default function CompanyEmployeeSummaryInfo({ workforceBracket, year }) {
     const textDisplayed = workforceBracket
-        ? `${trancheEffectifSalarie[workforceBracket]} (${year ?? unknownDate})`
+        ? `${trancheEffectifSalarie[workforceBracket]} (${`en ${year}` ?? unknownDate})`
         : unknownString;
 
     return (
