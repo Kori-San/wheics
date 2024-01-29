@@ -15,6 +15,7 @@ import RootHeader from './components/RootHeader';
 import optionListToString from './lib/react-select/optionListToString';
 import optionStringToList from './lib/react-select/optionStringToList';
 import categorieEntrepriseOptions from './data/select/categorieEntreprise';
+import sectionEntrepriseOptions from './data/select/sectionEntreprise';
 
 export default function Home() {
     const router = useRouter();
@@ -44,6 +45,14 @@ export default function Home() {
 
     const [companyCategories, setCompanyCategories] = useState(baseCategories);
 
+    /* -- CompanySections Hooks */
+    const baseStringSections = searchParams.has('sections') && searchParams.get('sections')
+        ? searchParams.get('sections')
+        : '';
+    const baseSections = optionStringToList(baseStringSections, sectionEntrepriseOptions);
+
+    const [companySections, setCompanySections] = useState(baseSections);
+
     /* Update URL Params */
     const updateURLParams = useCallback(() => {
         const params = new URLSearchParams(searchParams);
@@ -67,8 +76,15 @@ export default function Home() {
             params.delete('categories');
         }
 
+        if (companySections && companySections.length > 0) {
+            const sections = optionListToString(companySections);
+            params.set('sections', sections);
+        } else {
+            params.delete('sections');
+        }
+
         router.push(`?${params.toString()}`);
-    }, [page, searchParams, router, searchQuery, companyCategories]);
+    }, [page, searchParams, router, searchQuery, companyCategories, companySections]);
 
     /* Load data from API using fetch everytime one of the dependencies is changed */
     useEffect(() => {
@@ -77,7 +93,12 @@ export default function Home() {
         setLoading(true);
 
         /* - Fetch Data */
-        fetch(rechercheEntrepriseQueryBuilder(page, searchQuery, companyCategories))
+        fetch(rechercheEntrepriseQueryBuilder(
+            page,
+            searchQuery,
+            companyCategories,
+            companySections,
+        ))
             .then((result) => {
                 /* -- Return to default page if error */
                 if (result.status === 400) {
@@ -100,7 +121,7 @@ export default function Home() {
 
         /* - Update URL Params */
         updateURLParams();
-    }, [page, retryTrigger, updateURLParams, searchQuery, companyCategories]);
+    }, [page, retryTrigger, updateURLParams, searchQuery, companyCategories, companySections]);
 
     return (
         <main>
@@ -109,6 +130,7 @@ export default function Home() {
                     setSearchQuery={setSearchQuery}
                     setPage={setPage}
                     setCompanyCategories={setCompanyCategories}
+                    setCompanySections={setCompanySections}
                 />
                 <Loader toggle={loading} />
                 {!loading && (
