@@ -123,7 +123,7 @@ export default function Home() {
                                 )}
                         </div>
 
-                        <div className="flex justify-center items-center gap-10 mb-7">
+                        <div className="flex justify-center items-center gap-5 mb-7">
                             <KeyboardButton disabled={page === 1} onClick={() => { setPage(page - 1); }} label="Previous" message={<FaArrowLeftLong />} />
                             <KeyboardMessage message={page} />
                             <KeyboardButton disabled={page === maxPage || maxPage === 0} onClick={() => { setPage(page + 1); }} label="Next" message={<FaArrowRightLong />} />

@@ -16,7 +16,7 @@ export default function rechercheEntrepriseQueryBuilder(page, searchQuery, compa
     if (companyCategories && companyCategories.length > 0) {
         categories = optionListToString(companyCategories);
     } else {
-        categories = categorieEntrepriseOptions[0].value;
+        categories = optionListToString(categorieEntrepriseOptions);
     }
 
     query += `&categorie_entreprise=${categories}`;

@@ -9,7 +9,7 @@ export default function RootHeader({ setSearchQuery, setPage, setCompanyCategori
     const params = new URLSearchParams(searchParams);
 
     return (
-        <div className="m-8 flex flex-col md:flex-row justify-center gap-5 items-center">
+        <div className="m-8 flex flex-col lg:flex-row justify-center gap-5 items-center">
             <div className="flex flex-row rounded bg-gray-300">
                 <div className="px-2 py-1">
                     <a href="/">
@@ -18,7 +18,7 @@ export default function RootHeader({ setSearchQuery, setPage, setCompanyCategori
                 </div>
                 <input
                     type="text"
-                    className=" w-96 focus:bg-gray-100 focus:text-gray-600 bg-white transition duration-300 ease-in-out px-2 rounded-e typeFont text-gray-400"
+                    className=" w-72 md:w-96 text-xs md:text-sm focus:bg-gray-100 focus:text-gray-600 bg-white transition duration-300 ease-in-out px-2 rounded-e typeFont text-gray-400"
                     placeholder="SIREN, Dénomination ou Dirigeant"
                     defaultValue={params.get('q') || ''}
                     onChange={(event) => {
@@ -31,10 +31,11 @@ export default function RootHeader({ setSearchQuery, setPage, setCompanyCategori
                 closeMenuOnSelect={false}
                 isClearable
                 isSearchable
+                placeholder="Categorie d'entreprise"
                 defaultValue={
                     searchParams.has('categories') && searchParams.get('categories')
                         ? optionStringToList(searchParams.get('categories'), categorieEntrepriseOptions)
-                        : categorieEntrepriseOptions[0]
+                        : []
                 }
                 options={categorieEntrepriseOptions}
                 isMulti
