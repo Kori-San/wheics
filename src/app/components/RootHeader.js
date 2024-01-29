@@ -38,7 +38,10 @@ export default function RootHeader({ setSearchQuery, setPage, setCompanyCategori
                 }
                 options={categorieEntrepriseOptions}
                 isMulti
-                onChange={setCompanyCategories}
+                onChange={(selectedOptions) => {
+                    setCompanyCategories(selectedOptions);
+                    setPage(1);
+                }}
             />
         </div>
     );
