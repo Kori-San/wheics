@@ -12,6 +12,8 @@ import KeyboardMessage from './components/message/KeyboardMessage';
 
 import rechercheEntrepriseQueryBuilder from './lib/api/rechercheEntreprise';
 import RootHeader from './components/RootHeader';
+import categoryListToString from './lib/companyCategories/categoryListToString';
+import categoryStringToList from './lib/companyCategories/categoryStringToList';
 
 export default function Home() {
     const router = useRouter();
@@ -33,6 +35,14 @@ export default function Home() {
     const baseQuery = searchParams.has('q') ? searchParams.get('q') : '';
     const [searchQuery, setSearchQuery] = useState(baseQuery);
 
+    /* -- CompanyCategories Hooks */
+    const baseStringCategories = searchParams.has('categories') && searchParams.get('categories')
+        ? searchParams.get('categories')
+        : '';
+    const baseCategories = categoryStringToList(baseStringCategories);
+
+    const [companyCategories, setCompanyCategories] = useState(baseCategories);
+
     /* Update URL Params */
     const updateURLParams = useCallback(() => {
         const params = new URLSearchParams(searchParams);
@@ -49,8 +59,15 @@ export default function Home() {
             params.delete('page');
         }
 
+        if (companyCategories && companyCategories.length > 0) {
+            const categories = categoryListToString(companyCategories);
+            params.set('categories', categories);
+        } else {
+            params.delete('categories');
+        }
+
         router.push(`?${params.toString()}`);
-    }, [page, searchParams, router, searchQuery]);
+    }, [page, searchParams, router, searchQuery, companyCategories]);
 
     /* Load data from API using fetch everytime one of the dependencies is changed */
     useEffect(() => {
@@ -59,7 +76,7 @@ export default function Home() {
         setLoading(true);
 
         /* - Fetch Data */
-        fetch(rechercheEntrepriseQueryBuilder(page, searchQuery))
+        fetch(rechercheEntrepriseQueryBuilder(page, searchQuery, companyCategories))
             .then((result) => {
                 /* -- Return to default page if error */
                 if (result.status === 400) {
@@ -82,12 +99,16 @@ export default function Home() {
 
         /* - Update URL Params */
         updateURLParams();
-    }, [page, retryTrigger, updateURLParams, searchQuery]);
+    }, [page, retryTrigger, updateURLParams, searchQuery, companyCategories]);
 
     return (
         <main>
             <div className="flex justify-center items-center flex-col gap-5">
-                <RootHeader setSearchQuery={setSearchQuery} setPage={setPage} />
+                <RootHeader
+                    setSearchQuery={setSearchQuery}
+                    setPage={setPage}
+                    setCompanyCategories={setCompanyCategories}
+                />
                 <Loader toggle={loading} />
                 {!loading && (
                     <>
