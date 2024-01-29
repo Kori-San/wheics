@@ -31,10 +31,11 @@ export default function RootHeader({ setSearchQuery, setPage, setCompanyCategori
                 closeMenuOnSelect={false}
                 isClearable
                 isSearchable
+                placeholder="Categorie d'entreprise"
                 defaultValue={
                     searchParams.has('categories') && searchParams.get('categories')
                         ? categoryStringToList(searchParams.get('categories'))
-                        : categorieEntrepriseOptions[0]
+                        : []
                 }
                 options={categorieEntrepriseOptions}
                 isMulti
