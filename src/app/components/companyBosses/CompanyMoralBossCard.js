@@ -9,7 +9,6 @@ export default function CompanyMoralBossCard({ dirigeant }) {
     return (
         <a
             href={`/company/${dirigeant.siren}`}
-            target="_blank"
             aria-label={`go to ${dirigeant.siren}`}
             className="hover:bg-slate-400 hover:-translate-y-2 transition ease-in-out duration-150 bg-slate-300 max-w-80 h-36 p-2 rounded-lg"
         >
