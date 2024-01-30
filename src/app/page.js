@@ -16,6 +16,7 @@ import optionListToString from './lib/react-select/optionListToString';
 import optionStringToList from './lib/react-select/optionStringToList';
 import categorieEntrepriseOptions from './data/select/categorieEntreprise';
 import sectionEntrepriseOptions from './data/select/sectionEntreprise';
+import trancheSalarieOptions from './data/select/trancheSalarie';
 
 export default function Home() {
     const router = useRouter();
@@ -53,6 +54,14 @@ export default function Home() {
 
     const [companySections, setCompanySections] = useState(baseSections);
 
+    /* -- CompanySections Hooks */
+    const baseStringWorkforce = searchParams.has('workforce') && searchParams.get('workforce')
+        ? searchParams.get('workforce')
+        : '';
+    const baseWorkforce = optionStringToList(baseStringWorkforce, trancheSalarieOptions);
+
+    const [companyWorkforce, setCompanyWorkforce] = useState(baseWorkforce);
+
     /* Update URL Params */
     const updateURLParams = useCallback(() => {
         const params = new URLSearchParams(searchParams);
@@ -83,8 +92,23 @@ export default function Home() {
             params.delete('sections');
         }
 
+        if (companyWorkforce && companyWorkforce.length > 0) {
+            const workforce = optionListToString(companyWorkforce);
+            params.set('workforce', workforce);
+        } else {
+            params.delete('workforce');
+        }
+
         router.push(`?${params.toString()}`);
-    }, [page, searchParams, router, searchQuery, companyCategories, companySections]);
+    }, [
+        page,
+        searchParams,
+        router,
+        searchQuery,
+        companyCategories,
+        companySections,
+        companyWorkforce,
+    ]);
 
     /* Load data from API using fetch everytime one of the dependencies is changed */
     useEffect(() => {
@@ -98,6 +122,7 @@ export default function Home() {
             searchQuery,
             companyCategories,
             companySections,
+            companyWorkforce,
         ))
             .then((result) => {
                 /* -- Return to default page if error */
@@ -121,7 +146,15 @@ export default function Home() {
 
         /* - Update URL Params */
         updateURLParams();
-    }, [page, retryTrigger, updateURLParams, searchQuery, companyCategories, companySections]);
+    }, [
+        page,
+        retryTrigger,
+        updateURLParams,
+        searchQuery,
+        companyCategories,
+        companySections,
+        companyWorkforce,
+    ]);
 
     return (
         <main>
@@ -131,6 +164,7 @@ export default function Home() {
                     setPage={setPage}
                     setCompanyCategories={setCompanyCategories}
                     setCompanySections={setCompanySections}
+                    setCompanyWorkforce={setCompanyWorkforce}
                 />
                 <Loader toggle={loading} />
                 {!loading && (
