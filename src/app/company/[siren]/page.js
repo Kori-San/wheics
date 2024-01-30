@@ -1,10 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { FaArrowLeft } from 'react-icons/fa6';
 import CompanySummary from '@/app/components/CompanySummary';
 import CompanyRawData from '@/app/components/CompanyRawData';
-import ButtonToRoute from '@/app/components/button/ButtonToRoute';
 import Loader from '@/app/components/Loader';
 import CompanyBosses from '@/app/components/CompanyBosses';
 
@@ -25,8 +23,7 @@ export default function CompanyDetails({ params }) {
 
     return (
         <main>
-            <ButtonToRoute route="%PREVIOUS%" message={[<FaArrowLeft key={Math.floor(Math.random() * 1024)} />, ' Back']} />
-            <div className="flex justify-center items-center">
+            <div className="mt-5 flex flex-col justify-center items-center">
                 <Loader toggle={loading} />
                 <div className="min-w-full mx-10 mb-10">
                     {company.map((companyData) => (
