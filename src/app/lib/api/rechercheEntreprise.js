@@ -7,6 +7,7 @@ export default function rechercheEntrepriseQueryBuilder(
     companyCategories,
     companySections,
     companyWorkforce,
+    companyComplements,
 ) {
     const companyAPIEndpoint = 'https://recherche-entreprises.api.gouv.fr/search?';
     const companyFetched = 20;
@@ -35,6 +36,13 @@ export default function rechercheEntrepriseQueryBuilder(
     if (companyWorkforce && companyWorkforce.length > 0) {
         const workforce = optionListToString(companyWorkforce);
         query += `&tranche_effectif_salarie=${workforce}`;
+    }
+
+    if (companyComplements && companyComplements.length > 0) {
+        const complements = optionListToString(companyComplements).split(',');
+        for (let index = 0; index < complements.length; index += 1) {
+            query += `&${complements[index]}=true`;
+        }
     }
 
     query += `&page=${page}`;

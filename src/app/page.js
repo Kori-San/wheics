@@ -17,6 +17,7 @@ import optionStringToList from './lib/react-select/optionStringToList';
 import categorieEntrepriseOptions from './data/select/categorieEntreprise';
 import sectionEntrepriseOptions from './data/select/sectionEntreprise';
 import trancheSalarieOptions from './data/select/trancheSalarie';
+import complementsEntrepriseOptions from './data/select/complementsEntreprise';
 
 export default function Home() {
     const router = useRouter();
@@ -54,13 +55,21 @@ export default function Home() {
 
     const [companySections, setCompanySections] = useState(baseSections);
 
-    /* -- CompanySections Hooks */
+    /* -- CompanyWorkforce Hooks */
     const baseStringWorkforce = searchParams.has('workforce') && searchParams.get('workforce')
         ? searchParams.get('workforce')
         : '';
     const baseWorkforce = optionStringToList(baseStringWorkforce, trancheSalarieOptions);
 
     const [companyWorkforce, setCompanyWorkforce] = useState(baseWorkforce);
+
+    /* -- CompanyComplements Hooks */
+    const baseStringComplements = searchParams.has('complements') && searchParams.get('complements')
+        ? searchParams.get('complements')
+        : '';
+    const baseComplements = optionStringToList(baseStringComplements, complementsEntrepriseOptions);
+
+    const [companyComplements, setCompanyComplements] = useState(baseComplements);
 
     /* Update URL Params */
     const updateURLParams = useCallback(() => {
@@ -99,6 +108,13 @@ export default function Home() {
             params.delete('workforce');
         }
 
+        if (companyComplements && companyComplements.length > 0) {
+            const complements = optionListToString(companyComplements);
+            params.set('complements', complements);
+        } else {
+            params.delete('complements');
+        }
+
         router.push(`?${params.toString()}`);
     }, [
         page,
@@ -108,6 +124,7 @@ export default function Home() {
         companyCategories,
         companySections,
         companyWorkforce,
+        companyComplements,
     ]);
 
     /* Load data from API using fetch everytime one of the dependencies is changed */
@@ -123,6 +140,7 @@ export default function Home() {
             companyCategories,
             companySections,
             companyWorkforce,
+            companyComplements,
         ))
             .then((result) => {
                 /* -- Return to default page if error */
@@ -154,6 +172,7 @@ export default function Home() {
         companyCategories,
         companySections,
         companyWorkforce,
+        companyComplements,
     ]);
 
     return (
@@ -165,6 +184,7 @@ export default function Home() {
                     setCompanyCategories={setCompanyCategories}
                     setCompanySections={setCompanySections}
                     setCompanyWorkforce={setCompanyWorkforce}
+                    setCompanyComplements={setCompanyComplements}
                 />
                 <Loader toggle={loading} />
                 {!loading && (

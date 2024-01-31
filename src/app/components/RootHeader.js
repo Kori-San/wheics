@@ -5,6 +5,7 @@ import categorieEntrepriseOptions from '../data/select/categorieEntreprise';
 import optionStringToList from '../lib/react-select/optionStringToList';
 import sectionEntrepriseOptions from '../data/select/sectionEntreprise';
 import trancheSalarieOptions from '../data/select/trancheSalarie';
+import complementsEntrepriseOptions from '../data/select/complementsEntreprise';
 
 export default function RootHeader({
     setSearchQuery,
@@ -12,6 +13,7 @@ export default function RootHeader({
     setCompanyCategories,
     setCompanySections,
     setCompanyWorkforce,
+    setCompanyComplements,
 }) {
     const searchParams = useSearchParams();
     const params = new URLSearchParams(searchParams);
@@ -39,7 +41,7 @@ export default function RootHeader({
                 closeMenuOnSelect={false}
                 isClearable
                 isSearchable
-                placeholder="Categorie d'entreprise"
+                placeholder="Categories d'entreprise"
                 defaultValue={
                     searchParams.has('categories') && searchParams.get('categories')
                         ? optionStringToList(searchParams.get('categories'), categorieEntrepriseOptions)
@@ -57,7 +59,7 @@ export default function RootHeader({
                 closeMenuOnSelect={false}
                 isClearable
                 isSearchable
-                placeholder="Section d'activités"
+                placeholder="Secteurs d'activités"
                 defaultValue={
                     searchParams.has('sections') && searchParams.get('sections')
                         ? optionStringToList(searchParams.get('sections'), sectionEntrepriseOptions)
@@ -77,6 +79,31 @@ export default function RootHeader({
                     setPage(1);
                 }}
             />
+            <Select
+                closeMenuOnSelect={false}
+                isClearable
+                isSearchable
+                placeholder="Compléments d'activités"
+                defaultValue={
+                    searchParams.has('complements') && searchParams.get('complements')
+                        ? optionStringToList(searchParams.get('complements'), complementsEntrepriseOptions)
+                        : []
+                }
+                className="text-xs w-[336px] md:w-[368px] lg:w-[432px]"
+                styles={{
+                    multiValueLabel: (baseStyles) => ({
+                        ...baseStyles,
+                        maxWidth: '5ch',
+                    }),
+                }}
+                options={complementsEntrepriseOptions}
+                isMulti
+                onChange={(selectedOptions) => {
+                    setCompanyComplements(selectedOptions);
+                    setPage(1);
+                }}
+            />
+
             <Select
                 closeMenuOnSelect={false}
                 isClearable
