@@ -1,10 +1,10 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import CompanySummary from '@/app/components/CompanySummary';
-import CompanyRawData from '@/app/components/CompanyRawData';
+import CompanySummary from '@/app/components/company/CompanySummary';
+import CompanyRawData from '@/app/components/company/CompanyRawData';
 import Loader from '@/app/components/Loader';
-import CompanyBosses from '@/app/components/CompanyBosses';
+import CompanyBosses from '@/app/components/company/CompanyBosses';
 
 export default function CompanyDetails({ params }) {
     const companyAPI = 'https://recherche-entreprises.api.gouv.fr';

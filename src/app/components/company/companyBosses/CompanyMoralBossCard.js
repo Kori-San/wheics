@@ -10,7 +10,7 @@ export default function CompanyMoralBossCard({ dirigeant }) {
         <a
             href={`/company/${dirigeant.siren}`}
             aria-label={`go to ${dirigeant.siren}`}
-            className="hover:bg-slate-400 hover:-translate-y-2 transition ease-in-out duration-150 bg-slate-300 max-w-80 h-36 p-2 rounded-lg"
+            className="hover:bg-slate-400 hover:-translate-y-1 transition ease-in-out duration-150 bg-slate-300 max-w-80 h-36 p-2 rounded-lg"
         >
             <div className="bg-gray-600 mb-2 gap-1 flex text-gray-200 items-center flex-row p-2 rounded">
                 <FcLibrary size={24} />

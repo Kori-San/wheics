@@ -15,10 +15,10 @@ export default function CompanyRawData({ company }) {
             <JsonView
                 keyName={company.nom_complet}
                 value={company}
-                className="p-5 rounded"
+                className="p-1 md:p-3 lg:p-5 rounded"
                 style={nordTheme}
                 collapsed={1}
-                indentWidth={20}
+                indentWidth={10}
                 enableClipboard
                 displayDataTypes={false}
                 displayObjectSize={false}
