@@ -19,7 +19,7 @@ export default function CompanyDetails({ params }) {
     useEffect(() => {
         setLoading(true);
 
-        if (params.siren.length !== 9 || parseInt(params.siren, 10) !== params.siren) {
+        if (!/^[0-9]{9}/.test(params.siren)) {
             setLoading(false);
             return;
         }
