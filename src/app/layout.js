@@ -3,7 +3,6 @@ import './style/globals.css';
 import './style/loader.css';
 import './style/keyboardButton.css';
 import './style/keyboardMessage.css';
-import './style/typeFont.css';
 
 const inter = Inter({ subsets: ['latin'] });
 

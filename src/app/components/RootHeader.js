@@ -28,7 +28,7 @@ export default function RootHeader({
                 </div>
                 <input
                     type="text"
-                    className=" w-72 md:w-80 lg:w-96 text-xs md:text-sm focus:bg-gray-100 focus:text-gray-600 bg-white transition duration-300 ease-in-out px-2 rounded-e typeFont text-gray-400"
+                    className=" w-72 md:w-80 lg:w-96 text-xs md:text-sm focus:bg-gray-100 focus:text-gray-600 bg-white transition duration-300 ease-in-out px-2 rounded-e text-gray-400"
                     placeholder="SIREN, Dénomination ou Dirigeant"
                     defaultValue={params.get('q') || ''}
                     onChange={(event) => {
