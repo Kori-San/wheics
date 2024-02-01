@@ -7,7 +7,7 @@ import JsonView from '@uiw/react-json-view';
 export default function CompanyRawData({ company }) {
     return (
         <div className="flex justify-center flex-col w-4/5 gap-3 bg-slate-600 rounded p-5">
-            <h1 className="text-gray-300 flex items-center gap-1 w-full text-2xl p-3 rounded-md">
+            <h1 className="text-gray-300 flex items-center gap-2 text-3xl">
                 <FcCommandLine size={50} />
                 {' '}
                 Raw Data

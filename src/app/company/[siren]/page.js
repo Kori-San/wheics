@@ -8,6 +8,7 @@ import Loader from '@/app/components/Loader';
 import CompanyBosses from '@/app/components/company/CompanyBosses';
 import NoResults from '@/app/components/NoResults';
 import KeyboardButton from '@/app/components/button/KeyboardButton';
+import CompanyToolbox from '@/app/components/company/CompanyToolbox';
 
 export default function CompanyDetails({ params }) {
     const companyAPI = 'https://recherche-entreprises.api.gouv.fr';
@@ -50,6 +51,7 @@ export default function CompanyDetails({ params }) {
                         { company ? (
                             <div className="flex justify-center flex-col gap-5 items-center" key={`${company.siren}-${company.siege.siret}`}>
                                 <CompanySummary company={company} />
+                                <CompanyToolbox company={company} />
                                 <CompanyBosses dirigeants={company.dirigeants} />
                                 <hr className="bg-gray-200 border-none w-3/5 h-0.5" />
                                 <CompanyRawData company={company} />
