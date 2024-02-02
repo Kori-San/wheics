@@ -13,7 +13,6 @@ export default function CompanyRawData({ company }) {
                 Raw Data
             </h1>
             <JsonView
-                keyName={company.nom_complet}
                 value={company}
                 className="p-1 md:p-3 lg:p-5 rounded"
                 style={nordTheme}
