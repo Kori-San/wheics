@@ -1,4 +1,3 @@
-import { Analytics } from '@vercel/analytics/react';
 import { Inter } from 'next/font/google';
 import './style/globals.css';
 import './style/loader.css';
@@ -15,10 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="fr">
-            <body className={inter.className}>
-                {children}
-                <Analytics />
-            </body>
+            <body className={inter.className}>{children}</body>
         </html>
     );
 }
