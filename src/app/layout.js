@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
     title: 'Wheics',
-    description: 'A simple tool to list all French Companies with multiple useful informations.',
+    description: "Un CRM simple d'utilisation basée sur l'OSINT.",
 };
 
 export default function RootLayout({ children }) {
