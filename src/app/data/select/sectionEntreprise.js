@@ -49,7 +49,7 @@ const sectionEntrepriseOptions = [
     },
     {
         value: 'M',
-        label: '🧪 Activités spécialisées, scientifiques et techniques',
+        label: '🎓 Activités spécialisées, scientifiques et techniques',
     },
     {
         value: 'N',
