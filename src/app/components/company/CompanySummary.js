@@ -2,6 +2,7 @@ import CompanyTitleSummaryInfo from './companySummary/CompanyTitleSummaryInfo';
 import CompanySimpleSummaryInfo from './companySummary/CompanySimpleSummaryInfo';
 import CompanyAddressSummaryInfo from './companySummary/CompanyAddressSummaryInfo';
 import CompanyEmployeeSummaryInfo from './companySummary/CompanyEmployeeSummaryInfo';
+import CompanyActivitySummaryInfo from './companySummary/CompanyActivitySummaryInfo';
 
 export default function CompanySummary({ company }) {
     const address = company.siege.geo_adresse ?? company.siege.adresse;
@@ -15,6 +16,10 @@ export default function CompanySummary({ company }) {
                 siren={company.siren}
             />
             <CompanyAddressSummaryInfo name={name} address={address} />
+            <CompanyActivitySummaryInfo
+                nafCode={company.activite_principale}
+                section={company.section_activite_principale}
+            />
             <CompanyEmployeeSummaryInfo
                 workforceBracket={company.tranche_effectif_salarie}
                 year={company.annee_tranche_effectif_salarie}
