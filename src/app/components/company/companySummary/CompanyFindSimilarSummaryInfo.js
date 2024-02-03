@@ -6,9 +6,14 @@ export default function CompanyFindSimilarSummaryInfo({
     category,
     section,
 }) {
+    let query = '/?';
+    query += section ? `&sections=${section}` : '';
+    query += workforceBracket ? `&workforce=${workforceBracket}` : '';
+    query += category ? `&categories=${category}` : '';
+
     return (
         <a
-            href={`/?sections=${section}&workforce=${workforceBracket}&categories=${category}`}
+            href={query}
             className="group bg-gray-300 p-3 rounded-lg transition-all ease-in-out duration-150 text-xl flex items-center gap-1"
         >
             <div className="group-hover:mx-1 flex justify-center group-hover:translate-x-1 items-center w-6">
