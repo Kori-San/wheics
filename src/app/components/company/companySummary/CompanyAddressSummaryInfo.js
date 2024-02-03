@@ -2,7 +2,7 @@ import { FaLocationDot } from 'react-icons/fa6';
 import { FcLink } from 'react-icons/fc';
 import { unknownString } from '@/app/data/globalWording';
 
-export default function CompanyAddressSumaryInfo({ name, address }) {
+export default function CompanyAddressSummaryInfo({ name, address }) {
     const query = `${address} ${name}`;
     const googleMapsURL = address && name ? `https://maps.google.com?q=${encodeURIComponent(query)}` : undefined;
 

@@ -1,6 +1,6 @@
 import CompanyTitleSummaryInfo from './companySummary/CompanyTitleSummaryInfo';
 import CompanySimpleSummaryInfo from './companySummary/CompanySimpleSummaryInfo';
-import CompanyAddressSumaryInfo from './companySummary/CompanyAddressSumaryInfo';
+import CompanyAddressSummaryInfo from './companySummary/CompanyAddressSummaryInfo';
 import CompanyEmployeeSummaryInfo from './companySummary/CompanyEmployeeSummaryInfo';
 
 export default function CompanySummary({ company }) {
@@ -14,7 +14,7 @@ export default function CompanySummary({ company }) {
                 category={company.categorie_entreprise}
                 siren={company.siren}
             />
-            <CompanyAddressSumaryInfo name={name} address={address} />
+            <CompanyAddressSummaryInfo name={name} address={address} />
             <CompanyEmployeeSummaryInfo
                 workforceBracket={company.tranche_effectif_salarie}
                 year={company.annee_tranche_effectif_salarie}
