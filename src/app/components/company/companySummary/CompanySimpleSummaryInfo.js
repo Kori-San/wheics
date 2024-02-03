@@ -4,7 +4,6 @@ export default function CompanySimpleSummaryInfo({ category, siren }) {
     return (
         <a
             href={`/?categories=${category}`}
-            target="_blank"
             className="group transition-all ease-in-out hover:translate-x-1 duration-150 flex flex-row items-center gap-1 text-xl"
         >
             <div className="group-hover:mx-1 flex justify-center items-center w-6">

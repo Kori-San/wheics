@@ -9,7 +9,6 @@ export default function CompanyActivitySummaryInfo({ nafCode, section }) {
     return (
         <a
             href={`/?sections=${section}`}
-            target="_blank"
             className="group transition-all ease-in-out hover:translate-x-1 duration-150 text-xl flex items-center gap-1"
         >
             <div className="group-hover:mx-1 flex justify-center items-center w-6">
