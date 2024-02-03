@@ -1,6 +1,7 @@
 import { FcSupport } from 'react-icons/fc';
 import PagesJaunesTool from './toolbox/PagesJaunesTool';
 import LinkedInRecrutementTool from './toolbox/LinkedInRecrutementTool';
+import LinkedInSearchTool from './toolbox/LinkedInSearchTool';
 
 export default function CompanyToolbox({ company }) {
     const address = company.siege.geo_adresse ?? company.siege.adresse;
@@ -15,6 +16,7 @@ export default function CompanyToolbox({ company }) {
             <hr className="w-full border mt-2 mb-4 border-slate-900" />
             <div className="flex justify-center items-center" />
             <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 2xl:grid-cols-8 gap-1 bg-gray-200 p-3">
+                <LinkedInSearchTool term={name} />
                 <PagesJaunesTool name={name} address={address} />
                 <LinkedInRecrutementTool name={name} />
             </div>
