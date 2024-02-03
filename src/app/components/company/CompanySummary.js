@@ -12,7 +12,7 @@ export default function CompanySummary({ company }) {
 
     return (
         <div className="flex justify-center flex-col gap-3 w-4/5 bg-gray-200 rounded p-5">
-            <CompanyTitleSummaryInfo name={name} address={address} />
+            <CompanyTitleSummaryInfo name={name} />
             <CompanySimpleSummaryInfo
                 category={category}
                 siren={company.siren}
