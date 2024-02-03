@@ -6,7 +6,7 @@ export default function GoogleMapsTool({ name, address }) {
 
     return (
         <a
-            className="min-w-36 h-16 max-w-52 bg-slate-400 rounded flex items-center justify-center group hover:bg-slate-900 transition-all duration-200 ease-in-out hover:scale-105 gap-1 flex-row"
+            className="h-16 max-w-80 bg-slate-400 rounded flex items-center justify-center group hover:bg-slate-900 transition-all duration-200 ease-in-out hover:scale-105 gap-1 flex-row"
             target="_blank"
             href={googleMapsURL}
         >

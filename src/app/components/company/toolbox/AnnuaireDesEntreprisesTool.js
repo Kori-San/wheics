@@ -5,7 +5,7 @@ export default function AnnuaireDesEntreprisesTool({ siren }) {
 
     return (
         <a
-            className="min-w-36 h-16 max-w-52 bg-gray-400 rounded flex items-center justify-center group hover:bg-gray-500 transition-all duration-200 ease-in-out hover:scale-105 gap-1 flex-row"
+            className="h-16 max-w-80 bg-gray-400 rounded flex items-center justify-center group hover:bg-gray-500 transition-all duration-200 ease-in-out hover:scale-105 gap-1 flex-row"
             target="_blank"
             href={annuaireEntreprisesURL}
         >
