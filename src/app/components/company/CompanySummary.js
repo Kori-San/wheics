@@ -17,7 +17,7 @@ export default function CompanySummary({ company }) {
                 category={category}
                 siren={company.siren}
             />
-            <CompanyAddressSummaryInfo name={name} address={address} />
+            <CompanyAddressSummaryInfo name={company.sigle ?? name} address={address} />
             <CompanyEmployeeSummaryInfo
                 workforceBracket={company.tranche_effectif_salarie}
                 year={company.annee_tranche_effectif_salarie}
