@@ -8,7 +8,7 @@ import GoogleMapsTool from './toolbox/GoogleMapsTool';
 
 export default function CompanyToolbox({ company }) {
     const address = company.siege.geo_adresse ?? company.siege.adresse;
-    const name = company.nom_raison_sociale ?? company.nom_complet;
+    const name = (company.sigle ?? company.nom_raison_sociale) ?? company.nom_complet;
 
     return (
         <div className="w-4/5 p-5 rounded bg-gray-200">
