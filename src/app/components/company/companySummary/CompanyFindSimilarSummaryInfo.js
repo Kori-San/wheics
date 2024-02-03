@@ -20,7 +20,7 @@ export default function CompanyFindSimilarSummaryInfo({
                 </div>
             </div>
             <div className="group-hover:translate-x-1 transition-all text-slate-700 duration-150 ease-in-out text-ellipsis whitespace-nowrap overflow-hidden">
-                Rechercher une entreprise similaire à
+                Entreprises similaire à
                 {' '}
                 <b>{name}</b>
             </div>
