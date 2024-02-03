@@ -4,6 +4,7 @@ import LinkedInRecrutementTool from './toolbox/LinkedInRecrutementTool';
 import LinkedInSearchTool from './toolbox/LinkedInSearchTool';
 import GoogleSearchTool from './toolbox/GoogleSearchTool';
 import AnnuaireDesEntreprisesTool from './toolbox/AnnuaireDesEntreprisesTool';
+import GoogleMapsTool from './toolbox/GoogleMapsTool';
 
 export default function CompanyToolbox({ company }) {
     const address = company.siege.geo_adresse ?? company.siege.adresse;
@@ -23,6 +24,7 @@ export default function CompanyToolbox({ company }) {
                     <PagesJaunesTool name={name} address={address} />
                     <LinkedInRecrutementTool name={name} />
                     <AnnuaireDesEntreprisesTool siren={company.siren} />
+                    <GoogleMapsTool name={name} address={address} />
                 </div>
             </div>
         </div>
