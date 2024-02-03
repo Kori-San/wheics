@@ -1,4 +1,4 @@
-import { FcConferenceCall, FcLink } from 'react-icons/fc';
+import { FcConferenceCall, FcSearch } from 'react-icons/fc';
 
 import trancheEffectifSalarie from '@/app/data/trancheEffectifSalarie';
 import { unknownString, unknownDate } from '@/app/data/globalWording';
@@ -15,7 +15,7 @@ export default function CompanyEmployeeSummaryInfo({ workforceBracket, year }) {
         >
             <div className="group-hover:mx-1 flex justify-center items-center w-6">
                 <div className="transition-all duration-150 ease-in-out group-hover:w-full w-0 flex justify-center items-center">
-                    <FcLink size={24} />
+                    <FcSearch size={24} />
                 </div>
                 <div className="transition-all duration-150 ease-in-out group-hover:w-0 w-full flex justify-center items-center">
                     <FcConferenceCall size={20} />
