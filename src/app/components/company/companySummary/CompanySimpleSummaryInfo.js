@@ -1,11 +1,9 @@
 import { FcAbout, FcLink } from 'react-icons/fc';
 
 export default function CompanySimpleSummaryInfo({ category, siren }) {
-    const annuaireEntreprisesURL = `https://annuaire-entreprises.data.gouv.fr/entreprise/${siren}`;
-
     return (
         <a
-            href={annuaireEntreprisesURL}
+            href={`/?categories=${category}`}
             target="_blank"
             className="group transition-all ease-in-out hover:translate-x-1 duration-150 flex flex-row items-center gap-1 text-xl"
         >
@@ -18,7 +16,7 @@ export default function CompanySimpleSummaryInfo({ category, siren }) {
                 </div>
             </div>
             <div className="text-ellipsis whitespace-nowrap overflow-hidden">
-                <b>{category}</b>
+                <b>{category.toUpperCase()}</b>
                 {' '}
                 - Siren n°
                 {siren}
