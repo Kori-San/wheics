@@ -15,12 +15,13 @@ export default function CompanyToolbox({ company }) {
                 Toolbox
             </p>
             <hr className="w-full border mt-2 mb-4 border-slate-900" />
-            <div className="flex justify-center items-center" />
-            <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 2xl:grid-cols-8 gap-1 bg-gray-200 p-3">
-                <LinkedInSearchTool term={name} />
-                <GoogleSearchTool term={name} />
-                <PagesJaunesTool name={name} address={address} />
-                <LinkedInRecrutementTool name={name} />
+            <div className="flex justify-center items-center">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-5 ">
+                    <LinkedInSearchTool term={name} />
+                    <GoogleSearchTool term={name} />
+                    <PagesJaunesTool name={name} address={address} />
+                    <LinkedInRecrutementTool name={name} />
+                </div>
             </div>
         </div>
     );
