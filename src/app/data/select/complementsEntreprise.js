@@ -15,4 +15,14 @@ const complementsEntrepriseOptions = [
     { value: 'est_uai', label: '⚖️ Entreprises ayant un établissement UAI (Unité Administrative Immatriculée)' },
 ];
 
+export function isComplementEntrepriseOptions(complement) {
+    for (let index = 0; index < complementsEntrepriseOptions.length; index += 1) {
+        if (complementsEntrepriseOptions[index].value.includes(complement)) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
 export default complementsEntrepriseOptions;
