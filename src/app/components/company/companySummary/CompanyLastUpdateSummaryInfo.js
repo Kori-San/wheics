@@ -21,7 +21,7 @@ export default function CompanyLastUpdateSummaryInfo({ date }) {
                     {' '}
                     <b>(Toolbox exclue)</b>
                 </p>
-                <IoIosInformationCircleOutline size={20} fill="#ffffff" />
+                <IoIosInformationCircleOutline className="absolute -translate-x-2.5" size={20} fill="#ffffff" />
             </div>
         </div>
     );
