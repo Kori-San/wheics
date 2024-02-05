@@ -6,6 +6,7 @@ import CompanyActivitySummaryInfo from './companySummary/CompanyActivitySummaryI
 import CompanyFindSimilarSummaryInfo from './companySummary/CompanyFindSimilarSummaryInfo';
 import CompanyComplementCardSummaryInfo from './companySummary/CompanyComplementCardSummaryInfo';
 import { isComplementEntrepriseOptions } from '@/app/data/select/complementsEntreprise';
+import CompanyLastUpdateSummaryInfo from './companySummary/CompanyLastUpdateSummaryInfo';
 
 export default function CompanySummary({ company }) {
     const address = company.siege.geo_adresse ?? company.siege.adresse;
@@ -50,6 +51,7 @@ export default function CompanySummary({ company }) {
                 category={category}
                 section={company.section_activite_principale}
             />
+            <CompanyLastUpdateSummaryInfo date={company.date_mise_a_jour} />
         </div>
     );
 }
