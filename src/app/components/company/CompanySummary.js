@@ -34,7 +34,10 @@ export default function CompanySummary({ company }) {
                 </div>
                 <div className="w-full grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-1">
                     {Object.keys(company.complements)
-                        .filter((complement) => isComplementEntrepriseOptions(complement))
+                        .filter(
+                            (complement) => isComplementEntrepriseOptions(complement)
+                                            && company.complements[complement] === true,
+                        )
                         .map((complement) => (
                             <CompanyComplementCardSummaryInfo
                                 key={`key-summary-${complement}-info`}
