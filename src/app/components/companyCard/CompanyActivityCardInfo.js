@@ -11,7 +11,7 @@ export default function CompanyActivityCardInfo({ NAFCode }) {
             <div className=" w-5 flex justify-center items-center">
                 <FcFactory size={15} />
             </div>
-            <div className="overflow-hidden text-ellipsis whitespace-nowrap">
+            <div className="w-full overflow-hidden text-ellipsis whitespace-nowrap">
                 {textDisplayed}
             </div>
         </div>

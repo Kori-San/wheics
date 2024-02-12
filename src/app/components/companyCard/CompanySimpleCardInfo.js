@@ -4,9 +4,9 @@ export default function CompanySimpleCardInfo({ category, siren }) {
     return (
         <h2 className="text-xs flex items-center gap-1">
             <div className=" w-5 flex justify-center items-center">
-                <FcAbout size={18} />
+                <FcAbout size={15} />
             </div>
-            <div>
+            <div className="w-full">
                 <b>{category}</b>
                 {' '}
                 - Siren n°

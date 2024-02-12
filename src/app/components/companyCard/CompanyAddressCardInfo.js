@@ -9,7 +9,7 @@ export default function CompanyAddressCardInfo({ address }) {
             <div className=" w-5 flex justify-center items-center">
                 <FaLocationDot size={15} style={{ fill: 'red' }} />
             </div>
-            <div className="overflow-hidden text-ellipsis whitespace-nowrap">
+            <div className="w-full overflow-hidden text-ellipsis whitespace-nowrap">
                 {textDisplayed}
             </div>
         </div>

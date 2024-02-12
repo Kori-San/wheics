@@ -11,9 +11,9 @@ export default function CompanyEmployeeCardInfo({ workforceBracket }) {
     return (
         <div className="flex flex-row items-center text-xs gap-1">
             <div className=" w-5 flex justify-center items-center">
-                <FcConferenceCall size={18} />
+                <FcConferenceCall size={15} />
             </div>
-            <div className="overflow-hidden text-ellipsis whitespace-nowrap" title={textDisplayed}>
+            <div className="w-full overflow-hidden text-ellipsis whitespace-nowrap" title={textDisplayed}>
                 {textDisplayed}
             </div>
         </div>
