@@ -3,6 +3,7 @@ import CompanySimpleCardInfo from './companyCard/CompanySimpleCardInfo';
 import CompanyAddressCardInfo from './companyCard/CompanyAddressCardInfo';
 import CompanyEmployeeCardInfo from './companyCard/CompanyEmployeeCardInfo';
 import CompanyActivityCardInfo from './companyCard/CompanyActivityCardInfo';
+import CompanyMoneyCardInfo from './companyCard/CompanyMoneyCardInfo';
 
 export default function CompanyCard({ company }) {
     const address = company.siege.geo_adresse ?? company.siege.adresse;
@@ -22,6 +23,7 @@ export default function CompanyCard({ company }) {
                     <CompanyAddressCardInfo address={address} />
                     <CompanyEmployeeCardInfo workforceBracket={company.tranche_effectif_salarie} />
                     <CompanyActivityCardInfo NAFCode={company.activite_principale} />
+                    <CompanyMoneyCardInfo finances={company.finances} />
                 </div>
             </div>
         </a>

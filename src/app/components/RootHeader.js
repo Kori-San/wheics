@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 import Select from 'react-select';
+import CurrencyInput from 'react-currency-input-field';
 import categorieEntrepriseOptions from '../data/select/categorieEntreprise';
 import optionStringToList from '../lib/react-select/optionStringToList';
 import sectionEntrepriseOptions from '../data/select/sectionEntreprise';
@@ -14,6 +15,8 @@ export default function RootHeader({
     setCompanySections,
     setCompanyWorkforce,
     setCompanyComplements,
+    setCaMin,
+    setCaMax,
 }) {
     const searchParams = useSearchParams();
     const params = new URLSearchParams(searchParams);
@@ -103,7 +106,6 @@ export default function RootHeader({
                     setPage(1);
                 }}
             />
-
             <Select
                 closeMenuOnSelect={false}
                 isClearable
@@ -128,6 +130,38 @@ export default function RootHeader({
                     setPage(1);
                 }}
             />
+            <div className="flex flex-row h-[38px] justify-center items-center">
+                <CurrencyInput
+                    name="ca_min"
+                    placeholder="Chiffre d'affaire min."
+                    className="h-full text-center w-[168px] md:w-[184px] lg:w-[216px] rounded text-xs md:text-sm focus:bg-red-100 focus:text-gray-600 bg-red-50 transition duration-300 ease-in-out rounded-e-none text-gray-400"
+                    intlConfig={{
+                        locale: 'fr-Fr',
+                        currency: 'EUR',
+                    }}
+                    defaultValue={
+                        searchParams.has('ca_min') && searchParams.get('ca_min')
+                            ? searchParams.get('ca_min')
+                            : undefined
+                    }
+                    onValueChange={(value) => setCaMin(value)}
+                />
+                <CurrencyInput
+                    name="ca_max"
+                    placeholder="Chiffre d'affaire max."
+                    className="h-full text-center w-[168px] md:w-[184px] lg:w-[216px] rounded text-xs md:text-sm focus:bg-teal-100 focus:text-gray-600 bg-teal-50 transition duration-300 ease-in-out rounded-s-none text-gray-400"
+                    intlConfig={{
+                        locale: 'fr-Fr',
+                        currency: 'EUR',
+                    }}
+                    defaultValue={
+                        searchParams.has('ca_max') && searchParams.get('ca_max')
+                            ? searchParams.get('ca_max')
+                            : undefined
+                    }
+                    onValueChange={(value) => setCaMax(value)}
+                />
+            </div>
         </div>
     );
 }

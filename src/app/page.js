@@ -71,6 +71,13 @@ export default function Home() {
 
     const [companyComplements, setCompanyComplements] = useState(baseComplements);
 
+    /* -- CA Hooks */
+    const baseCaMin = searchParams.has('ca_min') ? searchParams.get('ca_min') : '';
+    const [caMin, setCaMin] = useState(baseCaMin);
+
+    const baseCaMax = searchParams.has('ca_max') ? searchParams.get('ca_max') : '';
+    const [caMax, setCaMax] = useState(baseCaMax);
+
     /* Update URL Params */
     const updateURLParams = useCallback(() => {
         const params = new URLSearchParams(searchParams);
@@ -85,6 +92,18 @@ export default function Home() {
             params.set('page', page);
         } else {
             params.delete('page');
+        }
+
+        if (caMin) {
+            params.set('ca_min', caMin);
+        } else {
+            params.delete('ca_min');
+        }
+
+        if (caMax) {
+            params.set('ca_max', caMax);
+        } else {
+            params.delete('ca_max');
         }
 
         if (companyCategories && companyCategories.length > 0) {
@@ -125,6 +144,8 @@ export default function Home() {
         companySections,
         companyWorkforce,
         companyComplements,
+        caMin,
+        caMax,
     ]);
 
     /* Load data from API using fetch everytime one of the dependencies is changed */
@@ -141,6 +162,8 @@ export default function Home() {
             companySections,
             companyWorkforce,
             companyComplements,
+            caMin,
+            caMax,
         ))
             .then((result) => {
                 /* -- Return to default page if error */
@@ -173,6 +196,8 @@ export default function Home() {
         companySections,
         companyWorkforce,
         companyComplements,
+        caMin,
+        caMax,
     ]);
 
     return (
@@ -185,6 +210,8 @@ export default function Home() {
                     setCompanySections={setCompanySections}
                     setCompanyWorkforce={setCompanyWorkforce}
                     setCompanyComplements={setCompanyComplements}
+                    setCaMin={setCaMin}
+                    setCaMax={setCaMax}
                 />
                 <Loader toggle={loading} />
                 {!loading && (

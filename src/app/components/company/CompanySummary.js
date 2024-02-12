@@ -7,6 +7,7 @@ import CompanyFindSimilarSummaryInfo from './companySummary/CompanyFindSimilarSu
 import CompanyComplementCardSummaryInfo from './companySummary/CompanyComplementCardSummaryInfo';
 import { isComplementEntrepriseOptions } from '@/app/data/select/complementsEntreprise';
 import CompanyLastUpdateSummaryInfo from './companySummary/CompanyLastUpdateSummaryInfo';
+import CompanyMoneySummaryInfo from './companySummary/CompanyMoneySummaryInfo';
 
 export default function CompanySummary({ company }) {
     const address = company.siege.geo_adresse ?? company.siege.adresse;
@@ -30,6 +31,9 @@ export default function CompanySummary({ company }) {
                     <CompanyActivitySummaryInfo
                         nafCode={company.activite_principale}
                         section={company.section_activite_principale}
+                    />
+                    <CompanyMoneySummaryInfo
+                        finances={company.finances}
                     />
                 </div>
                 <div className="w-full grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-1">

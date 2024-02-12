@@ -8,6 +8,8 @@ export default function rechercheEntrepriseQueryBuilder(
     companySections,
     companyWorkforce,
     companyComplements,
+    caMin,
+    caMax,
 ) {
     const companyAPIEndpoint = 'https://recherche-entreprises.api.gouv.fr/search?';
     const companyFetched = 20;
@@ -43,6 +45,14 @@ export default function rechercheEntrepriseQueryBuilder(
         for (let index = 0; index < complements.length; index += 1) {
             query += `&${complements[index]}=true`;
         }
+    }
+
+    if (caMin) {
+        query += `&ca_min=${caMin}`;
+    }
+
+    if (caMax) {
+        query += `&ca_max=${caMax}`;
     }
 
     query += `&page=${page}`;
