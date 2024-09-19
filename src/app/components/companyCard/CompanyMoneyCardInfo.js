@@ -2,7 +2,7 @@ import { FcMoneyTransfer } from 'react-icons/fc';
 import { unknownString } from '@/app/data/globalWording';
 
 export default function CompanyMoneyCardInfo({ finances }) {
-    const financesKeys = Object.keys(finances);
+    const financesKeys = finances ? Object.keys(finances) : [];
     const lastYear = financesKeys[0];
     const money = financesKeys.length > 0 ? finances[lastYear].ca : null;
 
